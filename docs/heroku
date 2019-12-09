@@ -1,0 +1,17 @@
+remove debuggers
+make sure git ignoring correct files
+"postinstall": "webpack"
+
+,
+"engines" : {
+
+}
+node -v
+npm -v
+
+bundle install, 
+npm install
+
+heroku run rails console;
+heroku run rails db:migrate
+heroku open
