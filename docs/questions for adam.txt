@@ -1,0 +1,3 @@
+-render component inside component based on route (header)
+
+-dynamic login form -> sign in wants less information than sign up

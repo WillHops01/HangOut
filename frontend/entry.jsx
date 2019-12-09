@@ -5,6 +5,9 @@ import { HashRouter, Route } from 'react-router-dom';
 import Greeting from "./components/greeting";
 import configureStore from "./store/store";
 
+//testing
+import { login, logout } from "./util/session_api_util";
+
 const Root = ({store}) => (
   <Provider store={store}>
     <HashRouter>
@@ -16,5 +19,6 @@ const Root = ({store}) => (
 document.addEventListener("DOMContentLoaded", ()=>{
   const root = document.getElementById("root");
   const store = configureStore();
+  window.login = login;
   ReactDOM.render(<Root store={store} />, root);
 })

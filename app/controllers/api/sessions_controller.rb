@@ -1,4 +1,4 @@
-class App::SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(
       [:user][:username],
@@ -7,6 +7,7 @@ class App::SessionsController < ApplicationController
 
     if @user
       login(@user)
+      render :show
     else
     end
   end
