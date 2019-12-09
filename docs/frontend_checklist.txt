@@ -1,1 +1,3 @@
 https://open.appacademy.io/learn/swe-in-person-nyc/react/rails-react-redux-configuration-checklist
+
+npm install --save webpack webpack-cli react react-dom react-router-dom redux react-redux @babel/core @babel/preset-react @babel/preset-env babel-loader
