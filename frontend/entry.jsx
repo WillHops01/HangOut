@@ -11,7 +11,7 @@ import { login, logout } from "./util/session_api_util";
 const Root = ({store}) => (
   <Provider store={store}>
     <HashRouter>
-      <Route path="/" component={Greeting} />
+      <Greeting />
     </HashRouter>
   </Provider>
 );
