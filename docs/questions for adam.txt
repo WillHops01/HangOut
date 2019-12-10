@@ -2,11 +2,14 @@
 
 -dynamic login form -> sign in wants less information than sign up
 
+-12/10/19
+    -how does session form have access to props and path without being MSP in container?
+
 users joined to groups with "activities" joins table
 
-timestamps to joins table
+-timestamps to joins table
 
-add private bool to group table
+-add private bool to group table
 
 only load events on group page when clicking events
 can load most recent event/user
