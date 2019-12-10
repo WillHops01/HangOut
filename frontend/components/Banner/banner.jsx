@@ -9,11 +9,11 @@ class Banner extends React.Component {
 
     render(){
         const currentUser = this.props.currentUser
-        const display = (typeof currentUser === "undefined" ) ? <LoggedOut/> : <SignedIn/>
+        const display = (typeof currentUser === "undefined" ) ? <LoggedOut /> : <SignedIn logout={this.props.logout}/>
         return(
-            <div id="banner"> Imported Text
+            <div id="banner">
                 <div id="website-title">
-                    Website Title
+                    Hang Out
                 </div>
                 { display }
             </div>

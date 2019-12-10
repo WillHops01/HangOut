@@ -1,9 +1,10 @@
 import React from "react";
-import BannerContainer from "./Banner/banner_container";
-
 import { Route, Switch, Link } from "react-router-dom";
 import { NotLoggedRoute } from "../util/route_util";
+
+import BannerContainer from "./Banner/banner_container";
 import SignInContainer from "./Session/signin_container";
+import SplashContainer from "./Splash/splash";
 
 
 const App = () => (
@@ -12,7 +13,8 @@ const App = () => (
         <Switch>
             <NotLoggedRoute exact path="/login" component={SignInContainer} />
         </Switch>
-        <main></main>
+        <SplashContainer/>
+        
     </div>
 )
 

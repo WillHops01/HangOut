@@ -1,4 +1,5 @@
 import React from 'react';
+//import { Link, Redirect } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formSwitch = this.formSwitch.bind(this);
     this.addedSignUpField = this.addedSignUpField.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   update(field) {
@@ -36,6 +38,12 @@ class SessionForm extends React.Component {
 //       </ul>
 //     );
 //   }
+
+  handleClose(e) {
+    e.preventDefault();
+    let path = `/`;
+    this.props.history.push(path);
+  }
 
   formSwitch() {
       if (this.props.formType === "login"){
@@ -69,6 +77,8 @@ class SessionForm extends React.Component {
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form-box">
           LOG IN
+          <button onClick={this.handleClose}>
+            {`\u0078`} </button>
           <br/>
           { this.formSwitch()}
           {/* {this.renderErrors()} */}

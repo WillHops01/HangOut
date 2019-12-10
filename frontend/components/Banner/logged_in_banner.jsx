@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const LoggedIn = () => {
-    return (
-        <h2>You are logged in</h2>
-    )
-}
+const LoggedIn = ({logout}) => (
+    <div id="logged-in-banner">
+        <button onClick={logout}>
+            Log Out
+        </button>
+    </div>        
+)
+
 
 export default LoggedIn;
