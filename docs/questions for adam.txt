@@ -1,3 +1,22 @@
 -render component inside component based on route (header)
 
 -dynamic login form -> sign in wants less information than sign up
+
+users joined to groups with "activities" joins table
+
+timestamps to joins table
+
+add private bool to group table
+
+only load events on group page when clicking events
+can load most recent event/user
+
+events dont need backend route nested for user or group
+
+signup can use ui slice of state for modal
+
+creation and edit routes for group
+
+event creation nested under group
+
+event can be shown without group nesting
