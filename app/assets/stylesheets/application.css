@@ -14,11 +14,4 @@
  *= require_self
  */
 
- #banner{
-    font-family: 'Archivo Narrow', sans-serif;
-    font-size: 16;
- }
 
- h3 {
-     font-family: 'Courier New', Courier, monospace;
- }

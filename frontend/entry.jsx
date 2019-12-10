@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
 import { HashRouter, Route } from 'react-router-dom';
-import BannerContainer from "./components/Banner/banner_container";
+import App from "./components/app";
 import configureStore from "./store/store";
 
 //testing
@@ -12,7 +12,7 @@ import { login, logout } from "./actions/session_actions";
 const Root = ({store}) => (
   <Provider store={store}>
     <HashRouter>
-      <BannerContainer />
+      <App />
     </HashRouter>
   </Provider>
 );
