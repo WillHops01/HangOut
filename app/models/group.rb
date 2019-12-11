@@ -19,4 +19,13 @@ class Group < ApplicationRecord
     class_name: :User,
     foreign_key: :creator_id,
     primary_key: :id
+
+  has_many :members,
+    class_name: :Member,
+    foreign_key: :group_id,
+    primary_key: :id
+
+  has_many :users,
+    through: :members,
+    source: :user
 end

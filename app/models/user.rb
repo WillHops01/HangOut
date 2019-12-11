@@ -25,6 +25,15 @@ class User < ApplicationRecord
     foreign_key: :creator_id,
     primary_key: :id
 
+  has_many :memberships,
+    class_name: :Member,
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :groups,
+    through: :memberships,
+    source: :group
+
   def ensure_session_token
     self.session_token ||= self.reset_session_token!
   end
