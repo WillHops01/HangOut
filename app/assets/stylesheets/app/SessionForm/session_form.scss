@@ -21,23 +21,12 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    /***************************/
-    // display: grid;
-
-    // grid-template-columns: 100px 100px 100px;
-    // grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
-    // grid-gap: auto;
-
-    /***************************/
-    // display: flex;
-    // flex-direction: row;
-    /***************************/
     
     input{
         border: 2px solid black;
         // margin: 20px;
     }
-    /***************************/
+
     #session-link{
         color: blue;
         &:hover{
@@ -49,7 +38,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        text-align: center;
+        // text-align: center;
         padding: 30px;
 
         .session-form-label{
@@ -59,13 +48,63 @@
             margin: 10px 0 10px 0;
             .session-input-field{
                 align-self: stretch;
-                margin: 10px 0 10px 0;
+                margin: 10px 0 10px 0;                
+                &:focus{
+                    border-color: #1a1aff;
+                }
             }  
         }
         #session-submit{
-            align-self: center;
-            width: 50%;
+            width: fit-content;
             margin: 10px 0 10px 0;
+            background-color: rgba(234, 0, 65,1.0);
+            color: white;
+            font-size: 26px;
+            padding: 5px 10px 5px 10px;
+        }
+        .session-form-switch{
+            font-size: 16px;
+            margin: 5px 0px 5px 0px;
+        }
+        #session-form-title{
+            font-size: 30px;
+            font-style: bold;
+            img{
+                width:15px;
+                height: auto;
+                display: inline-block;
+                margin-left: 5px;
+            }
         }
     }
+}
+
+#demo-user-container{
+    background-color: rgb(216, 223, 234);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+
+    #demo-user-button{
+        border: 2px solid grey;
+        width: fit-content;
+        align-self: center;        
+        padding: 15px 15px 15px 15px;  
+    }
+
+    .demo-user-span{
+        margin: 15px 0px 15px 0px;      
+    }
+}
+
+#close-button{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.error-message{
+    color: red;
 }

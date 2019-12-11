@@ -30,7 +30,8 @@ class SessionForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="error-message"
+            key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -45,19 +46,19 @@ class SessionForm extends React.Component {
   }
 
   formSwitch() {
-      if (this.props.formType === "login"){
+      if (this.props.formType === "Log in"){
           return(
-          <h4>Not registered with us yet? {this.props.navLink}</h4>
+            <span className="session-form-switch">Not registered with us yet? {this.props.navLink}</span>
           )
       } else {
           return(
-              <h3>Still working, see session_form.jsx</h3>
+            <span className="session-form-switch">Already a member? {this.props.navLink}</span>
           )
       }
   }
 
   addedSignUpField(){
-      if (this.props.formType === "signup"){
+      if (this.props.formType === "continue"){
           return(
             <label className="session-form-label">
               <span>Username:</span>
@@ -72,7 +73,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    //debugger;
     return (
       <div className="session-form-background">        
         <div className="session-form-grid-container"> 
@@ -80,7 +80,10 @@ class SessionForm extends React.Component {
             {`\u0078`} 
           </button>
           <form id="session-form" onSubmit={this.handleSubmit} >
-            LOG IN
+            <span id="session-form-title">
+              LOG IN
+              <img src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" />
+            </span>
             { this.formSwitch()}
             {this.renderErrors()}
             { this.addedSignUpField() }
@@ -101,15 +104,17 @@ class SessionForm extends React.Component {
               />
             </label>              
             <input id="session-submit" type="submit" value={this.props.formType} />
-          </form>                    
-          <div>
-            <button onClick={(event)=>{
+          </form>
+                             
+          <div id="demo-user-container">
+            <span className="demo-user-span">OR</span> 
+            <button id="demo-user-button" onClick={(event)=>{
               this.state.email = "DemoUser",
               this.state.password = "hunter2",
               this.handleSubmit(event)
-            }}>
-              <span className="input-field-name">
-                Demo User Log In
+              }}>
+              <span className="demo-user-span">
+                Log In as a Demo User
               </span>
             </button>
           </div>    
