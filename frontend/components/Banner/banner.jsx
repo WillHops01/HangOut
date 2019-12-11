@@ -8,7 +8,6 @@ class Banner extends React.Component {
     }
 
     render(){
-        debugger;
         const currentUser = this.props.currentUser
         const display = (typeof currentUser === "undefined" ) ? <LoggedOut /> : <SignedIn logout={this.props.logout}/>
         return(
