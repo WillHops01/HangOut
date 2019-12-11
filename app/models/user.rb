@@ -21,6 +21,11 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :created_groups,
+    class_name: :Group,
+    foreign_key: :creator_id,
+    primary_key: :id
+
   def ensure_session_token
     self.session_token ||= self.reset_session_token!
   end

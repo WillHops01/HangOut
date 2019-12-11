@@ -8,3 +8,8 @@
 
 User.destroy_all
 user1 = User.create(username: "Will", email: "email@email.com",password: "hunter2",long:125.15,lat:100.15)
+
+Group.destroy_all
+group1 = user1.created_groups.create(name: "NYC Coding Afficionados",
+  description: "come discuss your coding woes, strategies, and jokes. Up your coding game.",
+  long: 125.13, lat: 100.85)
