@@ -1,5 +1,4 @@
 import React from 'react';
-//import { Link, Redirect } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -61,11 +60,11 @@ class SessionForm extends React.Component {
       if (this.props.formType === "signup"){
           return(
             <label className="session-form-label">
-              <span className="input-field-name">Username:</span>                
-              <input type="text"
+              <span>Username:</span>
+              <input className="session-input-field"
+                type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
               />
             </label>
           )
@@ -76,34 +75,33 @@ class SessionForm extends React.Component {
     //debugger;
     return (
       <div className="session-form-background">        
-        <div className="session-form-box"> 
+        <div className="session-form-grid-container"> 
           <button id="close-button" onClick={this.handleClose}>
-            {`\u0078`} </button>
-          <div id="session-form-flex-cont">
-            <form onSubmit={this.handleSubmit} >
-              LOG IN
-              { this.formSwitch()}
-              {this.renderErrors()}
-                { this.addedSignUpField() }
-                <label className="session-form-label">
-                <span className="input-field-name">Email address:</span>
-                  <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="login-input"
-                  />
-                </label>
-              <label className="session-form-label">
-                <span className="input-field-name">Password:</span>
-                  <input type="password"
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    className="login-input"
-                  />
-                </label>              
-                <input className="session-submit" type="submit" value={this.props.formType} />
-            </form>                    
-          </div>
+            {`\u0078`} 
+          </button>
+          <form id="session-form" onSubmit={this.handleSubmit} >
+            LOG IN
+            { this.formSwitch()}
+            {this.renderErrors()}
+            { this.addedSignUpField() }
+            <label className="session-form-label">
+              <span>Email address:</span> 
+              <input className="session-input-field"
+                type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+              />
+            </label>
+            <label className="session-form-label">
+              <span>Password:</span>              
+              <input className="session-input-field"
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+              />
+            </label>              
+            <input id="session-submit" type="submit" value={this.props.formType} />
+          </form>                    
           <div>
             <button onClick={(event)=>{
               this.state.email = "DemoUser",

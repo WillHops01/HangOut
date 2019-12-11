@@ -5,12 +5,12 @@
     bottom: 0%;
     left: 0%;
     right: 0%;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .6);
     
   }
 
-  .session-form-box {
-    z-index: 999;
+  .session-form-grid-container {
+    z-index: 2;
     position: relative;
     background: white;
     border-radius: 5px;
@@ -20,18 +20,22 @@
     height: 500px;
     top: 50%;
     left: 50%;
-    text-align: center;
     transform: translateX(-50%) translateY(-50%);
+    /***************************/
+    // display: grid;
+
+    // grid-template-columns: 100px 100px 100px;
+    // grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+    // grid-gap: auto;
+
     /***************************/
     // display: flex;
     // flex-direction: row;
     /***************************/
-   
-
+    
     input{
         border: 2px solid black;
-        margin: 20px;
-        display: flex
+        // margin: 20px;
     }
     /***************************/
     #session-link{
@@ -39,26 +43,29 @@
         &:hover{
             text-decoration: underline;
         }
-    }
-    #close-button{
-        position: absolute;
-        top: 0;
-        right: 0;
-    }    
-}
-
-.session-form-label{
-    display: flex;
-    margin: 20px;
-    text-align: left;
-}
-
-#session-form-flex-cont{
-    display: flex;
-    flex-direction: column;
+    }  
     
-}
+    #session-form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 30px;
 
-.input-field-name{
-    display: flex;
+        .session-form-label{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 10px 0 10px 0;
+            .session-input-field{
+                align-self: stretch;
+                margin: 10px 0 10px 0;
+            }  
+        }
+        #session-submit{
+            align-self: center;
+            width: 50%;
+            margin: 10px 0 10px 0;
+        }
+    }
 }
