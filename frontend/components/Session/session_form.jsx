@@ -73,15 +73,18 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let formName = this.props.formType === "Log in" ? "Log in" : "Sign up";
+    
     return (
       <div className="session-form-background">        
         <div className="session-form-grid-container"> 
           <button id="close-button" onClick={this.handleClose}>
             {`\u0078`} 
           </button>
+
           <form id="session-form" onSubmit={this.handleSubmit} >
             <span id="session-form-title">
-              LOG IN
+              { formName }
               <img src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" />
             </span>
             { this.formSwitch()}
@@ -117,7 +120,8 @@ class SessionForm extends React.Component {
                 Log In as a Demo User
               </span>
             </button>
-          </div>    
+          </div>  
+
         </div>
       </div>
     );
