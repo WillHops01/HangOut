@@ -26,13 +26,12 @@
     // display: flex;
     // flex-direction: row;
     /***************************/
-    label{
-        display: inline-block;
-    }
+   
 
     input{
         border: 2px solid black;
-        display: inline-block;
+        margin: 20px;
+        display: flex
     }
     /***************************/
     #session-link{
@@ -45,6 +44,21 @@
         position: absolute;
         top: 0;
         right: 0;
-    }
+    }    
+}
+
+.session-form-label{
+    display: flex;
+    margin: 20px;
+    text-align: left;
+}
+
+#session-form-flex-cont{
+    display: flex;
+    flex-direction: column;
     
-  }
+}
+
+.input-field-name{
+    display: flex;
+}

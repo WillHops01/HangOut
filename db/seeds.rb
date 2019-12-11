@@ -9,6 +9,7 @@
 User.destroy_all
 user1 = User.create(username: "Will", email: "email@email.com",password: "hunter2",long:125.15,lat:100.15)
 user2 = User.create(username: "edherman", email: "edherman",password: "hunter2",long:125.15,lat:100.15)
+demouser = User.create(username: "demouser", email: "DemoUser", password: "hunter2", long:125.15,lat:100.15)
 
 Group.destroy_all
 group1 = user1.created_groups.create(name: "NYC Coding Afficionados",
@@ -30,5 +31,14 @@ membership2 = Member.create(
 )
 membership3 = Member.create(
   user: user2,
+  group: group2
+)
+#DEMO USER GROUPS
+membership4 = Member.create(
+  user: demouser,
+  group: group1
+)
+membership5 = Member.create(
+  user: demouser,
   group: group2
 )

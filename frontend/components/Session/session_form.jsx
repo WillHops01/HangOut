@@ -60,8 +60,8 @@ class SessionForm extends React.Component {
   addedSignUpField(){
       if (this.props.formType === "signup"){
           return(
-            <label>Username:
-                <br/>
+            <label className="session-form-label">
+              <span className="input-field-name">Username:</span>                
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -78,27 +78,40 @@ class SessionForm extends React.Component {
         <div className="session-form-box"> 
           <button id="close-button" onClick={this.handleClose}>
             {`\u0078`} </button>
-          <form onSubmit={this.handleSubmit} >
-            LOG IN
-            { this.formSwitch()}
-            {/* {this.renderErrors()} */}
-              { this.addedSignUpField() }
-              <label>Email address:
-                <input type="text"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"
-                />
-              </label>
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-              <input className="session-submit" type="submit" value={this.props.formType} />
-          </form>
+          <div id="session-form-flex-cont">
+            <form onSubmit={this.handleSubmit} >
+              LOG IN
+              { this.formSwitch()}
+              {/* {this.renderErrors()} */}
+                { this.addedSignUpField() }
+                <label className="session-form-label">
+                <span className="input-field-name">Email address:</span>
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="login-input"
+                  />
+                </label>
+              <label className="session-form-label">
+                <span className="input-field-name">Password:</span>
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="login-input"
+                  />
+                </label>              
+                <input className="session-submit" type="submit" value={this.props.formType} />
+            </form>
+            <button onClick={
+              this.state.email="DemoUser",
+              this.state.password="hunter2",
+              this.handleSubmit
+            }>
+              <span className="input-field-name">
+                Demo User Log In
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     );
