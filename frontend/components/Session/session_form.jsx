@@ -74,36 +74,32 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
-        <form onSubmit={this.handleSubmit} className="session-form-box">
-          LOG IN
-          <button onClick={this.handleClose}>
+      <div className="session-form-background">        
+        <div className="session-form-box"> 
+          <button id="close-button" onClick={this.handleClose}>
             {`\u0078`} </button>
-          <br/>
-          { this.formSwitch()}
-          {/* {this.renderErrors()} */}
-            <br/>
-            { this.addedSignUpField() }
-            <label>Email address:
-            <br/>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-        </form>
+          <form onSubmit={this.handleSubmit} >
+            LOG IN
+            { this.formSwitch()}
+            {/* {this.renderErrors()} */}
+              { this.addedSignUpField() }
+              <label>Email address:
+                <input type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                />
+              </label>
+              <label>Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+              </label>
+              <input className="session-submit" type="submit" value={this.props.formType} />
+          </form>
+        </div>
       </div>
     );
   }

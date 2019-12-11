@@ -1,4 +1,4 @@
-.session-form-container {
+.session-form-background {
     z-index: 1;
     position: absolute;
     top: 0%;
@@ -6,11 +6,12 @@
     left: 0%;
     right: 0%;
     background: rgba(0, 0, 0, .3);
+    
   }
 
   .session-form-box {
     z-index: 999;
-    position: absolute;
+    position: relative;
     background: white;
     border-radius: 5px;
     border: 1px solid black;
@@ -40,4 +41,10 @@
             text-decoration: underline;
         }
     }
+    #close-button{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
   }
