@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const msp = () => {
+const msp = ({errors}) => {
   return {
+    errors: errors.session,
     formType: 'login',
     navLink: <Link to="/signup" id="session-link">Sign up</Link>
   };

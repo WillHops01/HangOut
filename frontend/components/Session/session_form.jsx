@@ -27,17 +27,17 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-//   renderErrors() {
-//     return(
-//       <ul>
-//         {this.props.errors.map((error, i) => (
-//           <li key={`error-${i}`}>
-//             {error}
-//           </li>
-//         ))}
-//       </ul>
-//     );
-//   }
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   handleClose(e) {
     e.preventDefault();
@@ -73,6 +73,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    //debugger;
     return (
       <div className="session-form-background">        
         <div className="session-form-box"> 
@@ -82,7 +83,7 @@ class SessionForm extends React.Component {
             <form onSubmit={this.handleSubmit} >
               LOG IN
               { this.formSwitch()}
-              {/* {this.renderErrors()} */}
+              {this.renderErrors()}
                 { this.addedSignUpField() }
                 <label className="session-form-label">
                 <span className="input-field-name">Email address:</span>
@@ -101,17 +102,19 @@ class SessionForm extends React.Component {
                   />
                 </label>              
                 <input className="session-submit" type="submit" value={this.props.formType} />
-            </form>
-            <button onClick={
-              this.state.email="DemoUser",
-              this.state.password="hunter2",
-              this.handleSubmit
-            }>
+            </form>                    
+          </div>
+          <div>
+            <button onClick={(event)=>{
+              this.state.email = "DemoUser",
+              this.state.password = "hunter2",
+              this.handleSubmit(event)
+            }}>
               <span className="input-field-name">
                 Demo User Log In
               </span>
             </button>
-          </div>
+          </div>    
         </div>
       </div>
     );
