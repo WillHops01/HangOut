@@ -13,7 +13,7 @@
  *= require_self
  */
 
-@import "base/reset.scss";
+@import "base/reset.css";
 
 @import "app/Banner/Banner.scss";
 @import "app/SessionForm/session_form.scss";
