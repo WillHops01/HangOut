@@ -4,10 +4,11 @@ import LoggedOut from "./logged_out_banner";
 
 class Banner extends React.Component {
     constructor(props){
-        super(props)
-    };
+        super(props);
+    }
 
     render(){
+        debugger;
         const currentUser = this.props.currentUser
         const display = (typeof currentUser === "undefined" ) ? <LoggedOut /> : <SignedIn logout={this.props.logout}/>
         return(
