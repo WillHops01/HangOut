@@ -5,12 +5,11 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: '',
-      email: ''
+      password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.formSwitch = this.formSwitch.bind(this);
-    this.addedSignUpField = this.addedSignUpField.bind(this);
+    // this.addedSignUpField = this.addedSignUpField.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
 
@@ -57,20 +56,20 @@ class SessionForm extends React.Component {
       }
   }
 
-  addedSignUpField(){
-      if (this.props.formType === "continue"){
-          return(
-            <label className="session-form-label">
-              <span>Username:</span>
-              <input className="session-input-field"
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-              />
-            </label>
-          )
-      }
-  }
+  // addedSignUpField(){
+  //     if (this.props.formType === "continue"){
+  //         return(
+  //           <label className="session-form-label">
+  //             <span>Username:</span>
+  //             <input className="session-input-field"
+  //               type="text"
+  //               value={this.state.username}
+  //               onChange={this.update('username')}
+  //             />
+  //           </label>
+  //         )
+  //     }
+  // }
 
   render() {
     let formName = this.props.formType === "Log in" ? "Log in" : "Sign up";
@@ -89,7 +88,7 @@ class SessionForm extends React.Component {
             </span>
             { this.formSwitch()}
             {this.renderErrors()}
-            { this.addedSignUpField() }
+            {/* { this.addedSignUpField() } */}
             <label className="session-form-label">
               <span>Email address:</span> 
               <input className="session-input-field"

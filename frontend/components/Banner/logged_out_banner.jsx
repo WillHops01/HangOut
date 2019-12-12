@@ -1,15 +1,57 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+//import DemoUserPrompt from "../Session/demo_user_component";
 
-const LoggedOut = () => {
+class LoggedOut extends React.Component {
+  constructor(props){
+    super(props);
+    this.demoUserForm = this.demoUserForm.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.state = {
+      demoUserPrompt: false
+    };
+  }
+
+  handleClose(){
+    e.preventDefault();
+    let path = `/`;
+    this.props.history.push(path);
+  }
+  
+  demoUserForm(){
+    return(
+      <div id="demo-user-form-background">
+        <div id="demo-user-box">
+          <button id="close-button" onClick={this.handleClose}>
+            {`\u0078`}
+          </button>
+          <span>
+            HELLO
+          </span>
+          <span>
+          </span>
+          <button>
+          </button>
+          OR
+          <button>
+          </button>
+        </div>
+      </div>
+    )    
+  }
+
+  render(){
+    let demoUserBox = this.state.demoUserPrompt ? this.demoUserForm() : null;
     return (
-    <nav id="login-signup">
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Sign up!</Link>
-    </nav>
+      <nav id="login-signup">
+        <Link to="/login">Login</Link>
+        <button onClick={() => this.setState({ demoUserPrompt: true })}>
+          Sign up
+        </button>
+        { demoUserBox }
+      </nav>
     )
+  }  
 }
-
-
 
 export default LoggedOut;
