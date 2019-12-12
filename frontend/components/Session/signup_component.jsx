@@ -1,4 +1,5 @@
 import React from 'react';
+import { signup } from "../../actions/session_actions";
 
 class SignUpForm extends React.Component{
   constructor(props){
@@ -8,8 +9,9 @@ class SignUpForm extends React.Component{
       password: '',
       email: ''
     };
+    //debugger;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClose = this.handleClose.bind(this);
+    // this.handleClose = this.handleClose.bind(this);
   }
 
   renderErrors() {
@@ -39,9 +41,9 @@ class SignUpForm extends React.Component{
 
   render(){
     return (
-      <div>
+      <div id="signup-container">AHHHHHh
         <form>
-
+        eh
         </form>
       </div>
     )

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import DemoUserPrompt from "../Session/demo_user_component";
+import DemoUserPrompt from "../Session/demo_user_component";
 
 class LoggedOut extends React.Component {
   constructor(props){
@@ -19,36 +19,41 @@ class LoggedOut extends React.Component {
   }
   
   demoUserForm(){
-    return(
-      <div id="demo-user-form-background">
-        <div id="demo-user-box">
-          <button id="close-button" onClick={this.handleClose}>
-            {`\u0078`}
-          </button>
-          <span>
-            HELLO
-          </span>
-          <span>
-          </span>
-          <button>
-          </button>
-          OR
-          <button>
-          </button>
-        </div>
-      </div>
-    )    
+    // return(
+    //   <div id="demo-user-form-background">
+    //     <div id="demo-user-box">
+    //       <button id="close-button" onClick={this.handleClose}>
+    //         {`\u0078`}
+    //       </button>
+    //       <span>
+    //         HELLO
+    //       </span>
+    //       <span>
+    //       </span>
+    //       <button>
+    //       </button>
+    //       OR
+    //       <button>
+    //       </button>
+    //     </div>
+    //   </div>
+    // )    
   }
 
   render(){
-    let demoUserBox = this.state.demoUserPrompt ? this.demoUserForm() : null;
+    // let demoUserBox = this.state.demoUserPrompt ? DemoUserPrompt : null;
+    // if (demoUserBox){
+    //   let parent = document.getElementById("root")
+    //   parent.appendChild(demoUserBox)
+    // }
     return (
       <nav id="login-signup">
         <Link to="/login">Login</Link>
-        <button onClick={() => this.setState({ demoUserPrompt: true })}>
+        {/* <button onClick={() => this.setState({ demoUserPrompt: true })}>
           Sign up
-        </button>
-        { demoUserBox }
+        </button> */}
+        <Link to="/signup">Sign up</Link>
+        
       </nav>
     )
   }  

@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import Banner from "./banner";
 import { logout } from "../../actions/session_actions";
 
-const msp = ({ session, entities: { users } }) => {
+const msp = ({ session, entities: { users }}) => {
   return {
     currentUser: users[session.id]
   };
