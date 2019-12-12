@@ -7,7 +7,7 @@ const msp = (currentUser, groups) => {
   return{
     groupIds,
     groups
-  }
+  };
 };
 
-export default connect(msp)(MyGroups)
+export default connect(msp)(MyGroups);

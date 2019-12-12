@@ -5,9 +5,11 @@ import { HashRouter, Route } from 'react-router-dom';
 import App from "./components/app";
 import configureStore from "./store/store";
 
+
 //testing
 //import { login, logout } from "./util/session_api_util";
 import { login, logout } from "./actions/session_actions";
+import { changeDropdownState } from "./actions/ui_actions";
 
 const Root = ({store}) => (
   <Provider store={store}>
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.logout = logout;
   window.store = store;
   window.dispatch = store.dispatch;
+  window.changeDropdownState = changeDropdownState;
 
   //END TESTING
   

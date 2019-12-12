@@ -5,11 +5,21 @@ import LoggedOut from "./logged_out_banner";
 class Banner extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            status: "hidden"
+        };
+    }
+
+    loggedInHeader(){
+        
+        return(
+            <h3>LogOut</h3>
+        )
     }
 
     render(){
         const currentUser = this.props.currentUser
-        const display = (typeof currentUser === "undefined" ) ? <LoggedOut /> : <SignedIn logout={this.props.logout}/>
+        const display = (typeof currentUser === "undefined" ) ? <LoggedOut /> : this.loggedInHeader()
         return(
             <div id="banner">
                 <div id="website-title">

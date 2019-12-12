@@ -1,16 +1,17 @@
-import CHANGE_DROPDOWN_STATE from "../actions/ui_actions";
+import { CHANGE_DROPDOWN_STATE } from "../actions/ui_actions";
 
-const uiReducer = ( state = {}, action ) => {
+const uiReducer = (state = {dropdownActive: false}, action ) => {
     Object.freeze(state);
+    //debugger;
     switch (action.type) {
         case CHANGE_DROPDOWN_STATE:
-            
-            
-            break;
-    
+            //debugger;
+            let newState = !state.dropdownActive;
+            return {dropdownActive: newState};
         default:
-            break;
+            let defaultState = {dropdownActive: false};
+            return defaultState;
     }
-}
+};
 
 export default uiReducer;
