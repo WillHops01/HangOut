@@ -1,19 +1,35 @@
 import React from "react";
-import SignedIn from "./logged_in_banner";
+// import SignedIn from "./logged_in_banner";
 import LoggedOut from "./logged_out_banner";
 
 class Banner extends React.Component {
     constructor(props){
         super(props);
+        this.changeDropdownState = this.changeDropdownState.bind(this);
         this.state = {
             status: "hidden"
         };
     }
 
-    loggedInHeader(){
-        
+    changeDropdownState(){
+        if(this.state.status === "hidden"){
+            this.state.status = "displayed";
+        } else {
+            this.state.status = "hidden";
+        }
+    }
+
+    loggedInHeader(){        
         return(
-            <h3>LogOut</h3>
+            <div id="user-nav-icon-container">
+                <button onClick={this.changeDropdownState}>
+                    <img src="/letter_image.png"/>
+                </button>
+                <nav id={this.state.status}>
+
+
+                </nav>
+            </div>
         )
     }
 
