@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
           </h2>
           <p id="session-form-switch">
             Not registered with us yet? 
-            <Link to="/signup" id="session-link">Sign up</Link>
+            <Link to="/signup" className="session-link">Sign up</Link>
           </p>
         </div>
 
@@ -87,36 +87,43 @@ class SessionForm extends React.Component {
         </div>
 
         <div id="demo-user-container">
-          <span className="demo-user-span">OR</span>
-          <button id="demo-user-button" onClick={(event) => {
-            this.state.email = "DemoUser",
-              this.state.password = "hunter2",
-              this.handleSubmit(event)
-          }}>
-            <span className="demo-user-span">
-              Log In as a Demo User
-            </span>
-          </button>
+          <section id="Or-box">OR</section>
+          {/* <span className="demo-user-span">OR</span> */}
+          <section id="demo-user-button-area">
+            <img src="Appacademylogo.png" />
+            <button id="demo-user-button" onClick={(event) => {
+              this.state.email = "DemoUser",
+                this.state.password = "hunter2",
+                this.handleSubmit(event)
+              }}>
+              <span className="demo-user-span">
+                Log In as a Demo User
+              </span>
+            </button>
+          </section>
+          
         </div>
       </div>
+      
     )
   }
 
   renderSignup(){
     return (
-      <div className="signup-form-container">
-        <button id="close-button" onClick={this.handleClose}>
+      <div id="signup-form-container">
+        {/* <button id="close-button" onClick={this.handleClose}>
           {`\u0078`}
-        </button>
+        </button> */}
+        <div id="signup-header">
+          <h1 id="signup-title">
+            Sign up
+          </h1>
+        </div>  
 
         <form id="signup-form" onSubmit={this.handleSubmit} >
-          <span id="signup-form-title">
-            Sign up
-            <img src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" />
-          </span>
           {this.renderErrors()}
           <label className="signup-form-label">
-            <span>Username:</span>
+            <span>Username</span>
             <input className="signup-input-field"
               type="text"
               value={this.state.username}
@@ -124,7 +131,7 @@ class SessionForm extends React.Component {
             />
           </label>
           <label className="signup-form-label">
-            <span>Email address:</span>
+            <span>Email address</span>
             <input className="signup-input-field"
               type="text"
               value={this.state.email}
@@ -132,28 +139,39 @@ class SessionForm extends React.Component {
             />
           </label>
           <label className="signup-form-label">
-            <span>Password:</span>
+            <span>Password</span>
             <input className="signup-input-field"
               type="password"
               value={this.state.password}
               onChange={this.update('password')}
             />
           </label>
-          <input id="session-submit" type="submit" value="Continue" />
-        </form>
+          
 
-        {/* <div id="demo-user-container">
-          <span className="demo-user-span">OR</span>
-          <button id="demo-user-button" onClick={(event) => {
-            this.state.email = "DemoUser",
-              this.state.password = "hunter2",
-              this.handleSubmit(event)
-          }}>
-            <span className="demo-user-span">
-              Log In as a Demo User
-              </span>
-          </button>
-        </div> */}
+          <div id="signup-location-info">
+            PLACEHOLDER FOR LOCATION
+          </div>
+          <div id="signup-disclaimer">
+            Your name is public. We'll use your email address to send you updates, and your location to find Meetups near you.
+
+          </div>
+
+          <input id="signup-submit" type="submit" value="Continue" />
+
+
+        </form>
+        <div id="signup-switch-area">
+          <div id="signup-switch-text">
+            <span >
+              Already a member?
+              <Link to="/login" className="session-link">
+                  Log in
+              </Link>
+              .
+            </span>
+          </div>
+          
+        </div>
 
       </div>
     )
@@ -161,14 +179,12 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    let form = this.props.formType === "login" ? this.renderLogin() : null;
+    let form = this.props.formType === "login" ? this.renderLogin() : this.renderSignup();
     
     return (
       <div id="session-form-background">
-        { form }
-        <div id="testing-footer">
-
-        </div>
+        { form }    
+          
       </div>
     );
   }

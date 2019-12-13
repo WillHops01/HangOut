@@ -1,14 +1,16 @@
 #session-form-background {
-    position: absolute;
-    top: 68px;
+    // position: absolute;
+    
     background: #fafafa;
     width: 100%;
     border-top: 1px solid rgba(0,0,0,.12);
+    // height: auto
 }
 
 #testing-footer{
     background:  #0f1721;
-    height: 336px;
+    margin-top: 15px;
+    // height: 336px;
 }
 
 .login-form-container {
@@ -31,13 +33,7 @@
         // margin: 20px;
     }
 
-    #session-link{
-        margin-left: 4px;
-        color: blue;
-        &:hover{
-            text-decoration: underline;
-        }
-    }  
+    
 
     #login-form-header{
         display: flex;
@@ -117,59 +113,49 @@
         border-color: #ed1c40;
     }  
 }
-    
-//     #login-form{
-//         display: flex;
-//         // flex-direction: column;
-//         // justify-content: center;
-//         // text-align: center;
-//         padding: 30px;
-//         border-top: 1px solid rgba(0,0,0,.12);
-
-        
-
-//         .session-form-label{
-//             display: flex;
-//             flex-direction: column;
-//             align-items: flex-start;
-//             margin: 10px 0 10px 0;
-//             .session-input-field{
-//                 align-self: stretch;
-//                 margin: 10px 0 10px 0;  
-//                 border: 1px solid rgba(0,0,0,.12);
-//                 border-radius: 3px;
-//                 background-color: #fafafa;              
-//                 &:focus{
-//                     border-color: #1a1aff;
-//                 }
-//             }  
-//         }
-//         #session-submit{
-//             width: fit-content;
-//             margin: 10px 0 10px 0;
-//             background-color: rgba(234, 0, 65,1.0);
-//             color: white;
-//             font-size: 26px;
-//             padding: 5px 10px 5px 10px;
-//         }
-        
-        
-//     }
-// }
 
 #demo-user-container{
     background-color: rgb(216, 223, 234);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 150px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    height: 130px;
+    padding: 16px 0px 16px 0px;
+    // align-items: center;
+
+    #Or-box{
+        background: #FFF;
+        height: 16px;
+        text-align: center;
+        font-weight: 700;
+        margin: -24px auto 0px;
+        // margin-left: 215px;
+        width: 32px;
+        // display: inline-block;
+        // align-self: center;
+        // text-align: center;
+        line-height: 14px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    #demo-user-button-area{
+        margin-top: 12px;
+        
+        img{
+            width: 15px;
+            height: auto;
+        }
+    }
 
     #demo-user-button{
         border: 2px solid grey;
         width: fit-content;
         align-self: center;        
         padding: 15px 15px 15px 15px;  
+        margin-top: 12px;
     }
 
     .demo-user-span{
@@ -186,3 +172,11 @@
 .error-message{
     color: red;
 }
+
+.session-link{
+    margin-left: 4px;
+    color: blue;
+    &:hover{
+        text-decoration: underline;
+    }
+}  
