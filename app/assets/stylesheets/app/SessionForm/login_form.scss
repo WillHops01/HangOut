@@ -1,26 +1,28 @@
-.session-form-background {
-    z-index: 1;
+#session-form-background {
     position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-    background: rgba(0, 0, 0, .6);
-    
+    top: 68px;
+    background: #fafafa;
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.12);
   }
 
-  .session-form-grid-container {
-    z-index: 2;
+  #testing-footer{
+    background:  #0f1721;
+    height: 336px;
+  }
+
+  .login-form-container {
     position: relative;
     background: white;
-    border-radius: 5px;
-    border: 1px solid black;
+    border-radius: 5px;    
+    border: 1px solid rgba(0,0,0,.12);
+    border-bottom: 1px solid rgba(0,0,0,.26);
     font-size: 20px;
     width: 450px;
-    height: 500px;
-    top: 50%;
+    height: auto;
+    margin: 120px 0px 120px 0px;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%);
     
     input{
         border: 2px solid black;
@@ -34,12 +36,23 @@
         }
     }  
     
-    #session-form{
+    #login-form{
         display: flex;
         flex-direction: column;
         justify-content: center;
         // text-align: center;
         padding: 30px;
+
+        #login-form-header{
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        #login-form-content{
+            border-top: 1px solid rgba(0,0,0,.12);
+            width: 100%;
+        }
 
         .session-form-label{
             display: flex;
@@ -63,8 +76,9 @@
             padding: 5px 10px 5px 10px;
         }
         .session-form-switch{
-            font-size: 16px;
+            font-size: 13px;
             margin: 5px 0px 5px 0px;
+
         }
         #session-form-title{
             font-size: 30px;

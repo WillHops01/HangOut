@@ -1,14 +1,11 @@
 import { connect } from 'react-redux';
-import React from 'react';
-import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
-import SessionForm from './login_form';
+import SessionForm from './session_form';
 
 const msp = ({errors}) => {
-  return {
+  return{
     errors: errors.session,
-    formType: 'Log in',
-    navLink: <Link to="/signup" id="session-link">Sign up</Link>
+    formType: "login"
   };
 };
 
