@@ -49,23 +49,22 @@ class SessionForm extends React.Component {
   renderLogin(){
     return(
       <div className="login-form-container">
-        <button id="close-button" onClick={this.handleClose}>
-          {`\u0078`}
-        </button>
+        <div id="login-form-header">
+          {/* <button id="close-button" onClick={this.handleClose}>
+            {`\u0078`}
+          </button>         */}        
+          <h2 id="session-form-title">
+            Log in
+            <img src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" />
+          </h2>
+          <p id="session-form-switch">
+            Not registered with us yet? 
+            <Link to="/signup" id="session-link">Sign up</Link>
+          </p>
+        </div>
 
-        <form id="login-form" onSubmit={this.handleSubmit} >
-          <div id="login-form-header">
-            <span id="session-form-title">
-              Log in
-              <img src="https://secure.meetupstatic.com/s/img/09300654065624139187/icon/icon_padlock.gif" />
-            </span>
-            <span id="session-from-switch">
-              Not registered with us yet? 
-              <Link to="/signup" id="session-link">Sign up</Link>
-            </span>
-          </div>
-
-          <div id="login-form-content">
+        <div id="login-form-content">
+          <form id="login-form" onSubmit={this.handleSubmit} >          
             {this.renderErrors()}
             <label className="session-form-label">
               <span>Email address:</span>
@@ -83,10 +82,9 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
               />
             </label>
-            <input id="session-submit" type="submit" value="Log in" />
-          </div>
-          
-        </form>
+            <input id="session-submit" type="submit" value="Log in" /> 
+          </form>
+        </div>
 
         <div id="demo-user-container">
           <span className="demo-user-span">OR</span>
@@ -97,10 +95,9 @@ class SessionForm extends React.Component {
           }}>
             <span className="demo-user-span">
               Log In as a Demo User
-              </span>
+            </span>
           </button>
         </div>
-
       </div>
     )
   }

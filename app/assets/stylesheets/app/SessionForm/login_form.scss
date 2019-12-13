@@ -4,14 +4,14 @@
     background: #fafafa;
     width: 100%;
     border-top: 1px solid rgba(0,0,0,.12);
-  }
+}
 
-  #testing-footer{
+#testing-footer{
     background:  #0f1721;
     height: 336px;
-  }
+}
 
-  .login-form-container {
+.login-form-container {
     position: relative;
     background: white;
     border-radius: 5px;    
@@ -23,6 +23,8 @@
     margin: 120px 0px 120px 0px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
     
     input{
         border: 2px solid black;
@@ -30,68 +32,106 @@
     }
 
     #session-link{
+        margin-left: 4px;
         color: blue;
         &:hover{
             text-decoration: underline;
         }
     }  
-    
-    #login-form{
+
+    #login-form-header{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        // text-align: center;
-        padding: 30px;
-
-        #login-form-header{
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        #login-form-content{
-            border-top: 1px solid rgba(0,0,0,.12);
-            width: 100%;
-        }
-
-        .session-form-label{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin: 10px 0 10px 0;
-            .session-input-field{
-                align-self: stretch;
-                margin: 10px 0 10px 0;                
-                &:focus{
-                    border-color: #1a1aff;
-                }
-            }  
-        }
-        #session-submit{
-            width: fit-content;
-            margin: 10px 0 10px 0;
-            background-color: rgba(234, 0, 65,1.0);
-            color: white;
-            font-size: 26px;
-            padding: 5px 10px 5px 10px;
-        }
-        .session-form-switch{
-            font-size: 13px;
-            margin: 5px 0px 5px 0px;
-
-        }
+        font-weight: 500;
+        line-height: 1.6;
+        padding: 16px 16px 0px 16px;
         #session-form-title{
-            font-size: 30px;
-            font-style: bold;
-            img{
-                width:15px;
-                height: auto;
-                display: inline-block;
-                margin-left: 5px;
-            }
+            font-size: 34px;
+            font-weight: 500;
+            padding-bottom: 8px;
+                img{
+                    width:15px;
+                    height: auto;
+                    display: inline-block;
+                    margin-left: 5px;
+                }            
+        }   
+        #session-form-switch{
+            font-size: 13px;
+            margin-bottom: 16px;
+            font-weight: 500;
         }
     }
 }
+
+#login-form-content{            
+    width: 100%;
+    padding: 16px 16px 0px 16px;    
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .session-form-label{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0 10px 0;
+        .session-input-field{
+            align-self: stretch;
+            margin: 10px 0 10px 0;  
+            border: 1px solid rgba(0,0,0,.12);
+            border-radius: 3px;
+            background-color: #fafafa;              
+            &:focus{
+                border-color: #1a1aff;
+            }
+        }  
+    }    
+}
+    
+//     #login-form{
+//         display: flex;
+//         // flex-direction: column;
+//         // justify-content: center;
+//         // text-align: center;
+//         padding: 30px;
+//         border-top: 1px solid rgba(0,0,0,.12);
+
+        
+
+//         .session-form-label{
+//             display: flex;
+//             flex-direction: column;
+//             align-items: flex-start;
+//             margin: 10px 0 10px 0;
+//             .session-input-field{
+//                 align-self: stretch;
+//                 margin: 10px 0 10px 0;  
+//                 border: 1px solid rgba(0,0,0,.12);
+//                 border-radius: 3px;
+//                 background-color: #fafafa;              
+//                 &:focus{
+//                     border-color: #1a1aff;
+//                 }
+//             }  
+//         }
+//         #session-submit{
+//             width: fit-content;
+//             margin: 10px 0 10px 0;
+//             background-color: rgba(234, 0, 65,1.0);
+//             color: white;
+//             font-size: 26px;
+//             padding: 5px 10px 5px 10px;
+//         }
+        
+        
+//     }
+// }
 
 #demo-user-container{
     background-color: rgb(216, 223, 234);
