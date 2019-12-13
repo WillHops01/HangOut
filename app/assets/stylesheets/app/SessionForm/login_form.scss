@@ -4,6 +4,7 @@
     background: #fafafa;
     width: 100%;
     border-top: 1px solid rgba(0,0,0,.12);
+    height: 100vh;
     // height: auto
 }
 
@@ -14,7 +15,7 @@
 }
 
 .login-form-container {
-    position: relative;
+    // position: relative;
     background: white;
     border-radius: 5px;    
     border: 1px solid rgba(0,0,0,.12);
@@ -22,9 +23,7 @@
     font-size: 20px;
     width: 450px;
     height: auto;
-    margin: 120px 0px 120px 0px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 64px auto 16px;
     display: flex;
     flex-direction: column;
     
@@ -117,12 +116,11 @@
 #demo-user-container{
     background-color: rgb(216, 223, 234);
     text-align: center;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
     height: 130px;
     padding: 16px 0px 16px 0px;
-    // align-items: center;
+    border-top: 1px solid #627AAD;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 
     #Or-box{
         background: #FFF;
@@ -130,11 +128,7 @@
         text-align: center;
         font-weight: 700;
         margin: -24px auto 0px;
-        // margin-left: 215px;
         width: 32px;
-        // display: inline-block;
-        // align-self: center;
-        // text-align: center;
         line-height: 14px;
         border-radius: 4px;
         font-weight: 700;
@@ -142,25 +136,43 @@
     }
 
     #demo-user-button-area{
-        margin-top: 12px;
+        margin: 56px 16px auto 16px;
+        display: flex;
+        justify-content: left;
         
         img{
-            width: 15px;
-            height: auto;
+            width: auto;
+            height: 40px;
+        }
+
+        #demo-user-button{
+            border: 1px solid darkblue;
+            border-left: 2px solid white;
+            width: 400px;
+            align-self: center; 
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: 600;
+            min-height: 36px;  
+            background-color: rgb(59,89,152);  
+            border-radius: 3px;   
+            // padding: 15px 15px 15px 15px;  
+            // margin-top: 12px;
+            #demo-user-span{
+                color: white;
+                
+                font-size: 16px;
+                font-weight: 600;
+                min-height: 36px;
+            }
         }
     }
 
-    #demo-user-button{
-        border: 2px solid grey;
-        width: fit-content;
-        align-self: center;        
-        padding: 15px 15px 15px 15px;  
-        margin-top: 12px;
-    }
+    
 
-    .demo-user-span{
-        margin: 15px 0px 15px 0px;      
-    }
+    // .demo-user-span{
+    //     margin: 15px 0px 15px 0px;      
+    // }
 }
 
 #close-button{

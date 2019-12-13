@@ -18,18 +18,13 @@ const App = () => (
                 <div id="app-login-container">
                     <SignInContainer />
                     <TestComponent />
+                    <EventNearYou />
                 </div>
-            )} />
-            
-            
-            
-            
-           
-                        
+            )} />      
             <NotLoggedRoute  exact path="/signup" component={CreateAccountContainer} />
         </Switch>
         <Route exact path="/" component={SplashContainer} />
-        <EventNearYou/>
+        
     </div>
 )
 

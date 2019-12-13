@@ -95,9 +95,9 @@ class SessionForm extends React.Component {
               this.state.email = "DemoUser",
                 this.state.password = "hunter2",
                 this.handleSubmit(event)
-              }}>
-              <span className="demo-user-span">
-                Log In as a Demo User
+             }}> 
+              <span id="demo-user-span">
+                Demo User Log In
               </span>
             </button>
           </section>
