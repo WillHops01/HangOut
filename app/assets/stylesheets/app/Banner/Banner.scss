@@ -19,20 +19,13 @@
     height: auto;
     top: 50%;
     -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translateY(-50%);   
  }
 
-//  #logged-in-banner{
-//     position: absolute;
-//     right: 0px;
-//     display: flex;
-//     justify-content: space-evenly;
-//     width: 15%;
-//     height: auto;
-//     top: 50%;
-//     -ms-transform: translateY(-50%);
-//     transform: translateY(-50%);
-//  }
+ .banner-button{
+     color: rgb(117, 117, 117);
+     font-size: 14px;
+ }
 
  #website-title{
     position: absolute;

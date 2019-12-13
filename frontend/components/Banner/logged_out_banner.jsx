@@ -41,19 +41,10 @@ class LoggedOut extends React.Component {
   }
 
   render(){
-    // let demoUserBox = this.state.demoUserPrompt ? DemoUserPrompt : null;
-    // if (demoUserBox){
-    //   let parent = document.getElementById("root")
-    //   parent.appendChild(demoUserBox)
-    // }
     return (
       <nav id="login-signup">
-        <Link to="/login">Login</Link>
-        {/* <button onClick={() => this.setState({ demoUserPrompt: true })}>
-          Sign up
-        </button> */}
-        <Link to="/signup">Sign up</Link>
-        
+        <Link to="/login" className="banner-button" >Log in</Link>        
+        <Link to="/signup" className="banner-button" >Sign up</Link>        
       </nav>
     )
   }  

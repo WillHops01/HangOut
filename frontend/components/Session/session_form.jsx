@@ -67,7 +67,7 @@ class SessionForm extends React.Component {
           <form id="login-form" onSubmit={this.handleSubmit} >          
             {this.renderErrors()}
             <label className="session-form-label">
-              <span>Email address:</span>
+              <span className="form-field">Email address:</span>
               <input className="session-input-field"
                 type="text"
                 value={this.state.email}
@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
               />
             </label>
             <label className="session-form-label">
-              <span>Password:</span>
+              <span className="form-field">Password:</span>
               <input className="session-input-field"
                 type="password"
                 value={this.state.password}
@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
         <form id="signup-form" onSubmit={this.handleSubmit} >
           {this.renderErrors()}
           <label className="signup-form-label">
-            <span>Username</span>
+            <span className="form-field">Username</span>
             <input className="signup-input-field"
               type="text"
               value={this.state.username}
@@ -131,7 +131,7 @@ class SessionForm extends React.Component {
             />
           </label>
           <label className="signup-form-label">
-            <span>Email address</span>
+            <span className="form-field">Email address</span>
             <input className="signup-input-field"
               type="text"
               value={this.state.email}
@@ -139,7 +139,7 @@ class SessionForm extends React.Component {
             />
           </label>
           <label className="signup-form-label">
-            <span>Password</span>
+            <span className="form-field">Password</span>
             <input className="signup-input-field"
               type="password"
               value={this.state.password}
