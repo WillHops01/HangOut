@@ -21,8 +21,7 @@ class Banner extends React.Component {
         }
     }
 
-    loggedInHeader(){ 
-        //debugger       
+    loggedInHeader(){    
         return(
             <div id="user-nav-icon-container">
                 <button onClick={this.changeDropdownState}>
@@ -41,7 +40,6 @@ class Banner extends React.Component {
     }
 
     render(){
-        //debugger;
         const currentUser = this.props.currentUser
         const display = (typeof currentUser === "undefined" ) ? <LoggedOut /> : this.loggedInHeader()
         return(
