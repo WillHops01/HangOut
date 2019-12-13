@@ -65,7 +65,7 @@
 }
 
 #login-form-content{            
-    width: 100%;
+    // width: 100%;
     padding: 16px 16px 0px 16px;    
     border-top: 1px solid rgba(0,0,0,.12);
 }
@@ -80,18 +80,42 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin: 10px 0 10px 0;
+        margin-bottom: 16px;
+        font-weight: 500px;
+        font-size: 13px;
         .session-input-field{
             align-self: stretch;
-            margin: 10px 0 10px 0;  
+            // margin-bottom: 16px;  
             border: 1px solid rgba(0,0,0,.12);
+            line-height: 1.45;
+            padding: 4px;
+            font-size: 16px;
             border-radius: 3px;
             background-color: #fafafa;              
             &:focus{
                 border-color: #1a1aff;
             }
         }  
-    }    
+    }  
+    #session-submit{
+        width: fit-content;
+        margin: 12px 16px 16px 0px;
+        // background-color: rgba(234, 0, 65,1.0);
+        color: white;
+        border-radius: 3px;
+        font-size: 16px;
+        font-weight: 600;
+        min-height: 36px;
+        align-self: left;
+        vertical-align: middle;
+        line-height: 1;
+        padding: 0px 16px 0 16px;
+        stroke: transparent;
+        fill: #fff;
+        color: #fff;
+        background: #ed1c40;
+        border-color: #ed1c40;
+    }  
 }
     
 //     #login-form{
