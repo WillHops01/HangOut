@@ -10,11 +10,57 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding-bottom: 48px;
 
     h2{
       color: #fff;
       font-size: 34px;
       padding-top:32px;
+      padding-bottom: 8px;
+    }
+
+    #find-group-events{
+      color: rgba(255,255,255, .7);
+      font-size: 16px;
+    }
+  }
+
+  #find-search{
+    background-color: rgb(14,23,33);
+    display: flex;
+    flex-direction: row;
+    margin: -42px 249px 0px 249px;
+
+    #find-search-form{
+      color:white;
+      padding: 12px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    #find-selector-container{      
+      padding: 8px;
+      display: flex;
+      flex-direction: row;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,.2);
+      margin-top: 12px;
+      margin-bottom: 12px;
+
+      #selected{
+        color: rgba(255,255,255,.7);
+        line-height: 43px;
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      #unselected{
+        color: rgba(255,255,255,.7);
+        line-height: 43px;
+        font-size: 16px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
   }
 }
