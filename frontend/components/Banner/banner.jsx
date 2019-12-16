@@ -32,7 +32,13 @@ class Banner extends React.Component {
                         Testing
                     </div>
                     <div id="dropdown-nav-options">
-                        <button onClick={this.props.logout}>Log Out</button>
+                        <button className="dropdown-nav-Items">
+                            Testing Button Placeholder
+                        </button>
+                        <button className="dropdown-nav-Items"
+                            onClick={this.props.logout}>
+                                Log Out
+                        </button>
                     </div>
                 </nav>
             </div>

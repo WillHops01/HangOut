@@ -12,4 +12,4 @@ const mdp = dispatch => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(msp, mdp)(Banner)
+export default connect(msp, mdp)(Banner);
