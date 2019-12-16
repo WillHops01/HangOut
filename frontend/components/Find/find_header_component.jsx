@@ -1,6 +1,7 @@
 import React from "react";
+import FindBodyComponent from "./find_body_component";
 
-class FindComponent extends React.Component{
+class FindHeaderComponent extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -31,20 +32,20 @@ class FindComponent extends React.Component{
           SEARCH
         </div>
         <div id="find-selector-container">
-          <button id={this.state.groups}
-                  value="Groups">
+          <button id={this.state.groups}>
+            Groups
           </button>
-          <div className={this.state.calendar}>
-            CALENDAR
-          </div>
+          <button id={this.state.calendar}>
+            Calendar
+          </button>
         </div>
       </div>
       <div find="find-main-content">
-
+        <FindBodyComponent />
       </div>
     </div>
     )
   }
 }
 
-export default FindComponent;
+export default FindHeaderComponent;

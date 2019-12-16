@@ -43,7 +43,7 @@ class Banner extends React.Component {
                         <ul>
                             <li>
                                 <span>
-                                    Long Group Name One
+                                    Long Multi-Line Group Name One
                                 </span>
                             </li>
                             <li>

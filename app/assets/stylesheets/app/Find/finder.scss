@@ -39,7 +39,9 @@
     }
 
     #find-selector-container{      
-      padding: 8px;
+      // padding: 8px;
+      // align-self: flex-end;
+      margin-left: 65%;
       display: flex;
       flex-direction: row;
       border-radius: 3px;
@@ -48,11 +50,14 @@
       margin-bottom: 12px;
 
       #selected{
-        color: rgba(255,255,255,.7);
         line-height: 43px;
         font-size: 16px;
         padding-left: 15px;
         padding-right: 15px;
+
+        box-shadow: inset -1px 1px 2px 0 rgba(0,0,0,.54);
+        background: rgba(255,255,255,.2);
+        color: #fff;
       }
       #unselected{
         color: rgba(255,255,255,.7);
