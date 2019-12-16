@@ -8,6 +8,28 @@ class FindHeaderComponent extends React.Component{
       groups: "selected",
       calendar: "unselected"
     };
+    this.selectPageView = this.selectPageView.bind(this);
+    this.swapStates = this.swapStates.bind(this);
+  }
+
+  swapStates(){
+    if (this.state.groups === "selected"){
+      this.setState({
+        groups: "unselected",
+        calendar: "selected"
+      });
+    } else {
+      this.setState({
+        groups: "selected",
+        calendar: "unselected"
+      });
+    }
+  }
+
+  selectPageView(e){    
+    if (e.currentTarget.id !== "selected"){
+      this.swapStates();
+    }
   }
 
   componentDidMount(){
@@ -32,10 +54,12 @@ class FindHeaderComponent extends React.Component{
           SEARCH
         </div>
         <div id="find-selector-container">
-          <button id={this.state.groups}>
+          <button id={this.state.groups}
+                  onClick={this.selectPageView}>
             Groups
           </button>
-          <button id={this.state.calendar}>
+          <button id={this.state.calendar}
+                  onClick={this.selectPageView}>
             Calendar
           </button>
         </div>

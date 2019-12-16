@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 class FindBodyComponent extends React.Component{
   constructor(props){
