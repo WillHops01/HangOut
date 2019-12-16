@@ -7,13 +7,13 @@ class Banner extends React.Component {
         super(props);
         this.changeDropdownState = this.changeDropdownState.bind(this);
         this.loggedInHeader = this.loggedInHeader.bind(this);
+        this.clicktoClose = this.clicktoClose.bind(this);
         this.state = {
             status: "hidden"
         };
     }
 
-    changeDropdownState(){
-        debugger;
+    changeDropdownState(){        
         if(this.state.status === "hidden"){
             this.setState({status: "displayed"});
         } else {
@@ -21,7 +21,12 @@ class Banner extends React.Component {
         }
     }
 
-    loggedInHeader(){    
+    clicktoClose(){
+        this.changeDropdownState();
+        this.props.logout();
+    }
+
+    loggedInHeader(){           
         return(
             <div id="user-nav-icon-container">
                 <button onClick={this.changeDropdownState}>
@@ -36,7 +41,7 @@ class Banner extends React.Component {
                             Testing Button Placeholder
                         </button>
                         <button className="dropdown-nav-Items"
-                            onClick={this.props.logout}>
+                            onClick={this.clicktoClose}>
                                 Log Out
                         </button>
                     </div>
