@@ -2,6 +2,8 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(new_user_params)
+    @user.long = 100;
+    @user.lat = 100;
     if @user.save
       login!(@user)
       render :show

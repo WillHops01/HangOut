@@ -7,8 +7,7 @@ const GroupsReducer = (state = {}, action) => {
     // case RECEIVE_CURRENT_USER:
     //   let newState = action.currentUser.groups;
     //   return Object.assign({},)
-    case GET_ALL_GROUPS:
-      debugger;
+    case GET_ALL_GROUPS:      
       return Object.assign({}, action.groups); 
     default:
       return state;
