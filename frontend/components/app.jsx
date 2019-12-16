@@ -31,6 +31,7 @@ const App = () => {
             <NotLoggedRoute exact path="/signup" component={CreateAccountContainer} />
         </Switch>
         <NotLoggedRoute exact path="/" component={SplashContainer} />
+        
 
         <ProtectedRoute exact path="/find" component={FindContainer} />
     </div>

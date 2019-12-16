@@ -2,6 +2,7 @@ import { getGroups } from "../util/groups_util";
 
 
 export const GET_ALL_GROUPS = "GET_ALL_GROUPS";
+//export const fetchGroupMemberships
 
 export const fetchGroups = () => dispatch =>{
   getGroups().then(groups => (

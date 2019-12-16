@@ -20,6 +20,14 @@ group2 = user2.created_groups.create(name: "Jokes R Us",
   description: "We get together to make bad jokes and do other hilarious things",
   long: 125.13, lat: 100.85)
 
+group3 = user2.created_groups.create(name: "Group 3",
+  description: "We make bad jokes and do other hilarious things",
+  long: 125.13, lat: 100.85)
+
+group4 = user1.created_groups.create(name: "Group 4",
+  description: "discuss your coding woes, strategies, and jokes. Up your coding game.",
+  long: 125.13, lat: 100.85)
+
 Member.destroy_all
 membership1 = Member.create(
   user: user1,

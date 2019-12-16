@@ -34,7 +34,7 @@ class MyGroups extends React.Component{
   buildGroupEles(){
     let count = 0;
     myGroups = groupIds.map((id, idx) => {
-      let group = this.props.groups[id]
+      let group = this.props.groups[id];
       count = count + 1;
       // if( count > maxGroups ){
       //   continue;
@@ -45,7 +45,7 @@ class MyGroups extends React.Component{
             { group.name }
           </span>
           <p className="fav-group-description">
-            {group.descrition}
+            {group.description}
           </p>
         </div>
       )

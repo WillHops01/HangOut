@@ -12,7 +12,7 @@ import {
     switch(action.type) {
       case RECEIVE_CURRENT_USER:
         return { id: action.currentUser.id,
-                  group_ids: action.currentUser.groups };
+          membership_ids: action.currentUser.membership_ids };
       case LOGOUT_CURRENT_USER:
         return _nullUser;
       default:

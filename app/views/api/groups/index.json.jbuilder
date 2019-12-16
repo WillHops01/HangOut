@@ -4,9 +4,8 @@
   end
 end
 
-# @benches.each do |bench|
-#   json.set! bench.id do
-#     json.partial! 'bench', bench: bench
-#     json.reviewIds []
-#   end
-# end
+if logged_in?
+  json.current_user_groups current_user.groups.pluck(:id)
+  
+  #current_user.groups.map{|group| group.id }
+end

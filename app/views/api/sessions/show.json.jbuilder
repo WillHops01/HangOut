@@ -1,6 +1,6 @@
 json.partial! 'api/shared/user', user: @user
 
-json.groups do
+json.membership_ids do
   @user.groups.each do |group|
     json.set! :id, group.id  
   end

@@ -1,5 +1,5 @@
 import React from "react";
-import FindBodyComponent from "./find_body_component";
+import FindGroupComponent from "./find_group_component";
 
 class FindHeaderComponent extends React.Component{
   constructor(props){
@@ -65,7 +65,7 @@ class FindHeaderComponent extends React.Component{
         </div>
       </div>
       <div find="find-main-content">
-        <FindBodyComponent />
+        <FindGroupComponent state={this.state}/>
       </div>
     </div>
     )
