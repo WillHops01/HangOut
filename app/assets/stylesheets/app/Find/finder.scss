@@ -1,0 +1,20 @@
+#find-page{
+
+  display: flex;
+  flex-direction: column;
+
+
+  #find-header{
+    background: #00455d;
+    margin-bottom: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+      color: #fff;
+      font-size: 34px;
+      padding-top:32px;
+    }
+  }
+}

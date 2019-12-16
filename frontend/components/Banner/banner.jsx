@@ -13,7 +13,7 @@ class Banner extends React.Component {
     }
 
     changeDropdownState(){
-        //debugger
+        debugger;
         if(this.state.status === "hidden"){
             this.setState({status: "displayed"});
         } else {
