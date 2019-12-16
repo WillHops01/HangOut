@@ -11,15 +11,16 @@
   #displayed{
     z-index: 100;
     position: absolute;
-    width: 512px;
+    width: 490px;
     // top: 50px;
-    left: -500px;
+    left: -460px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-top: 1px solid rgba(0,0,0,.12);
     border-radius: 3px;
     box-shadow: rgba(0,0,0,.54) 0 3px 8px 0;
+    background-color: white;
   }
 
   #dropdown-nav-options{
