@@ -6,17 +6,17 @@ class SuggestedGroups extends React.Component{
   constructor(props){
     super(props);
     const maxGroups = 12;
+    //TODO: use to limit group index page
     this.loadSuggestedGroups = this.loadSuggestedGroups.bind(this);
   }
 
   loadSuggestedGroups(){
     //TODO: Put location logic here
     
-    let userGroups = this.props.groups.current_user_groups
+    let userGroups = this.props.groups.current_user_groups;
     
     const suggestedGroupEles = Object.keys(this.props.groups).map((groupId, idx) => {
       let group = this.props.groups[groupId];
-      //debugger;
       if (!userGroups.includes(Number(groupId))){  
         //Fix state??
         if (groupId === "current_user_groups"){
@@ -41,7 +41,7 @@ class SuggestedGroups extends React.Component{
 
   componentDidMount(){
     if(!this.props.groups){
-      this.fetchGroups();
+      fetchGroups();
     }
   }
 

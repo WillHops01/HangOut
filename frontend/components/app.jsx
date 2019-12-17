@@ -9,9 +9,9 @@ import SplashContainer from "./Splash/splash";
 import EventNearYou from "./Events/temp_events";
 import FindContainer from "./Find/find_container";
 
+import GroupContainer from "./Groups/group_container";
 
-
-import TestComponent from "./test_component";
+//import TestComponent from "./test_component";
 
 
 const App = () => {
@@ -24,7 +24,6 @@ const App = () => {
             <NotLoggedRoute exact path="/login"  component={props => (
                 <div id="app-login-container">
                     <LogInContainer />
-                    <TestComponent />
                     <EventNearYou />
                 </div>
             )} />      
@@ -32,7 +31,8 @@ const App = () => {
         </Switch>
         <NotLoggedRoute exact path="/" component={SplashContainer} />
         
-
+        <Route path="/groups/:groupId" component={GroupContainer} />
+         
         <ProtectedRoute exact path="/find" component={FindContainer} />
     </div>
 )}
