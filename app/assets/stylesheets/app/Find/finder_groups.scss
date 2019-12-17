@@ -1,7 +1,8 @@
 #find-main-content{
   display: flex;
   flex-direction: column;
-  margin: 0px 249px 0px;
+  margin-left: 25%;
+  margin-right: 25%;
 
   #find-my-groups-container{
     background-color: blue;
@@ -29,15 +30,23 @@
   display: flex;
   flex-direction: row;
 
-  .mygroup-row-element{
-    padding-right: 16px;
+  .mygroup-row-element-container{
+    margin-right: 16px;
     margin-bottom: 16px;
+    width: 220px;
+    height: 180px;
+    display: table;
 
-    
+    .mygroup-element-title{
+      color: white;
+      font-size: 20px;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+      margin: auto;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 
-  img{
-      width: 200px;
-      height: 180px;
-    }
+  
 }

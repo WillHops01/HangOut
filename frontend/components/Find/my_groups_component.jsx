@@ -13,19 +13,22 @@ class MyGroupComponent extends React.Component{
   buildMyGroupElement(i){
     let index = this.myGroups[i];    
     let group = this.props.groups[index];
+
+    // backgroundImage: url(group.image_link)
+    //debugger;
+    const divStyle = {
+      background: `url(${group.image_link})`,
+      backgroundSize: `220px 180px`
+    };
     
     return(
       <div className="mygroup-row-element-container" 
-            key={group.id}>
-            {/* style="background-image: src="> */}
-        {group.name}
-        <img className="" src={group.image_link} />
+            key={group.id}
+            style={divStyle}>
+        <div className="mygroup-element-title">
+          {group.name}
+        </div>        
       </div>
-      // <img className="group-element-image" src={group.image_link}>
-      //   <div>
-      //     {group.name}
-      //   </div>
-      // </img>
     )
   }
 
