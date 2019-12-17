@@ -1,0 +1,29 @@
+#suggested-groups-main-container{
+  display: flex;
+  flex-direction: column;
+
+  #suggested-groups{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .suggested-group-element{
+      margin-right: 16px;
+      margin-bottom: 16px;
+      width: 310px;
+      height: 180px;
+      display: table;
+      border: 1px solid rgba(0,0,0,.12);
+
+      .suggested-group-element-title{
+        font-size: 20px;
+        text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+        margin: auto;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+
+}

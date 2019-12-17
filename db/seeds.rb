@@ -9,6 +9,9 @@
 image1 = "/GroupImages/group1.jpg"
 image2 = "/GroupImages/group2.jpg"
 image3 = "/GroupImages/hipsters.jpg"
+hiking_image = "/GroupImages/hikinggroup1.jpg"
+image4 = "/GroupImages/group4.jpg"
+image5 = "/GroupImages/group5.png"
 
 User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
@@ -37,15 +40,15 @@ group4 = user1.created_groups.create(name: "Group 4",
 
 group5 = user2.created_groups.create(name: "Hike NJ",
   description: "Hike the scenic trails of New Jersey.",
-  long: 125.13, lat: 100.85, image_link: image2)
+  long: 125.13, lat: 100.85, image_link: hiking_image)
 
 group6 = user2.created_groups.create(name: "Spanish / Englishh Conversation Club",
   description: "Come practice your Spanish / English ",
-  long: 125.13, lat: 100.85, image_link: image3)
+  long: 125.13, lat: 100.85, image_link: image4)
 
 group7 = user3.created_groups.create(name: "Group 7",
   description: "description lalala",
-  long: 125.13, lat: 100.85, image_link: image3)
+  long: 125.13, lat: 100.85, image_link: image5)
 
 Member.destroy_all
 membership1 = Member.create(

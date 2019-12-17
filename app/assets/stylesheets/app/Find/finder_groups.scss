@@ -28,6 +28,7 @@
     width: 220px;
     height: 180px;
     display: table;
+    border: 1px solid rgba(0,0,0,.12);
 
     .mygroup-element-title{
       color: white;
@@ -51,4 +52,4 @@
     letter-spacing: -.02em;
     word-spacing: .1em;
     margin-bottom: 16px;
-  }
+}

@@ -15,11 +15,22 @@ class SuggestedGroups extends React.Component{
     let userGroups = this.props.groups.current_user_groups
     
     const suggestedGroupEles = Object.keys(this.props.groups).map((groupId, idx) => {
-
-      if (!userGroups.includes(Number(groupId))){        
+      let group = this.props.groups[groupId];
+      //debugger;
+      if (!userGroups.includes(Number(groupId))){  
+        //Fix state??
+        if (groupId === "current_user_groups"){
+          return null;
+        }      
         return (
-          <div className="suggested-group-element" key={idx}>
-            {this.props.groups[groupId].name}
+          <div className="suggested-group-element" key={idx}
+                style={{
+                  background: `url(${group.image_link})`,
+                  backgroundSize: `310px 180px`
+                }}>
+            <div className="suggested-group-element-title">
+              {this.props.groups[groupId].name}
+            </div>            
           </div>
         )
       } 
@@ -43,7 +54,7 @@ class SuggestedGroups extends React.Component{
           <h4 className="my-groups-header">
             SUGGESTED GROUPS
           </h4>
-          <div>
+          <div id="suggested-groups">
             {this.loadSuggestedGroups()}
           </div>
         </div>
