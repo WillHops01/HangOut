@@ -7,9 +7,9 @@ import { fetchGroups } from "../../actions/group_actions";
 class FindGroupComponent extends React.Component{
   constructor(props){
     super(props);
-    let myGroups;
+    let myGroups = {};
     this.buildMyGroups = this.buildMyGroups.bind(this);
-    const groupArray = [];
+    //const groupArray = [];
   }
 
   // fetchMyGroups(){
@@ -17,33 +17,37 @@ class FindGroupComponent extends React.Component{
   // }
 
   componentDidMount(){
-    // myGroups = this.props.groups.current_user_groups;
+    fetchGroups();
+    
     // this.buildMyGroups();
-    // debugger;
   }
 
   buildMyGroups(){
-    // const myGroupDiv = this.props.current_user_groups.map((id, idx) => {
 
-    // })
-    //let numTimes = Math.ceil(myGroups.length / 3);
-
-
-    //let groupArray = [];
+    let groupArray = [];
     let subArray = [];
-    for (let i = 0; i < myGroups.length; i++){
-      if (i % 3 === 0 && i != 0){
-      groupArray.push(<div>{subArray}</div>)
-        subArray = [];
-      }
-      subArray.push(i);
 
+  
+    for (let i = 0; i < this.myGroups.length; i++){
+      if ( i === this.myGroups.length - 1){
+        subArray.push(i);
+        groupArray.push(<div key={i}>
+          {subArray}</div>)
+        break;
+      } else if ( i % 3 === 0 && i !== 0){
+        groupArray.push(<div key={i}>
+          {subArray}</div>)
+        subArray = [i];
+      } else {
+        subArray.push(i);
+      }     
     }
-
-    return(
+    debugger
+    return(   
       <div>
-        { groupArray }
-      </div>
+        {groupArray}
+      </div>   
+      
     )
   }
 
@@ -62,7 +66,17 @@ class FindGroupComponent extends React.Component{
     //     </div>
     //   )
     // }
-    return null;
+    this.myGroups = this.props.groups.current_user_groups;
+    if (this.myGroups){
+      return(
+        <div>
+          {this.buildMyGroups()}
+          groups built
+        </div>
+      )
+    } else {
+      return null;
+    }    
   }
 }
 

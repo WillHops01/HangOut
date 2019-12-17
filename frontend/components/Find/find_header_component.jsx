@@ -1,5 +1,6 @@
 import React from "react";
 import FindGroupComponent from "./find_group_component";
+import { fetchGroups } from "../../actions/group_actions";
 
 class FindHeaderComponent extends React.Component{
   constructor(props){
@@ -33,7 +34,8 @@ class FindHeaderComponent extends React.Component{
   }
 
   componentDidMount(){
-    
+    // debugger;
+    // fetchGroups();
   }
 
   render(){
