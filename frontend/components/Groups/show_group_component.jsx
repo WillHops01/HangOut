@@ -12,8 +12,32 @@ class ShowGroup extends React.Component{
     }
   }
 
-  render(){    
-    return null;
+  render(){  
+    const group = this.props.group;
+    if (group){
+      return(
+        <div id="group-show-page">
+          <div id="group-show-head-container">
+            <section id="group-show-head">
+              <img src={group.image_link} />
+              <div id="group-show-head-details">
+                <div id="group-show-details-title">
+                  {group.name}
+                </div>
+                <div>
+                  {group.description}
+                </div>
+              </div>
+            </section>
+
+          </div>
+          
+        </div>
+      )
+    } else {
+      return null;
+    } 
+    
   }
   
 }
