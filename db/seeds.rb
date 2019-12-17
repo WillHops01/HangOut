@@ -41,6 +41,10 @@ membership3 = Member.create(
   user: user2,
   group: group2
 )
+membership6 = Member.create(
+  user: user1,
+  group: group4
+)
 #DEMO USER GROUPS
 membership4 = Member.create(
   user: demouser,
