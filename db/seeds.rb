@@ -42,7 +42,7 @@ group5 = user2.created_groups.create(name: "Hike NJ",
   description: "Hike the scenic trails of New Jersey.",
   long: 125.13, lat: 100.85, image_link: hiking_image)
 
-group6 = user2.created_groups.create(name: "Spanish / Englishh Conversation Club",
+group6 = user2.created_groups.create(name: "Spanish / English Conversation Club",
   description: "Come practice your Spanish / English ",
   long: 125.13, lat: 100.85, image_link: image4)
 
@@ -50,7 +50,20 @@ group7 = user3.created_groups.create(name: "Group 7",
   description: "description lalala",
   long: 125.13, lat: 100.85, image_link: image5)
 
+group5 = user3.created_groups.create(name: "Group 8",
+  description: "Hike the trails of New Jersey.",
+  long: 125.13, lat: 100.85, image_link: image1)
+
+group6 = user3.created_groups.create(name: "Group 9",
+  description: "Come practice Spanish / English ",
+  long: 125.13, lat: 100.85, image_link: image3)
+
+group7 = user1.created_groups.create(name: "Group 10",
+  description: "description lalalala",
+  long: 125.13, lat: 100.85, image_link: hiking_image)
+
 Member.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('members')
 membership1 = Member.create(
   user: user1,
   group: group1

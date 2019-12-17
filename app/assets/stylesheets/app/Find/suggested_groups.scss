@@ -10,12 +10,14 @@
     .suggested-group-element{
       margin-right: 16px;
       margin-bottom: 16px;
-      width: 310px;
+      width: 290px;
       height: 180px;
       display: table;
       border: 1px solid rgba(0,0,0,.12);
 
       .suggested-group-element-title{
+        font-weight: bold;
+        color: white;
         font-size: 20px;
         text-shadow: 1px 1px 0 rgba(0,0,0,.26);
         margin: auto;
