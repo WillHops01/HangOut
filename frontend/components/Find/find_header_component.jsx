@@ -1,5 +1,7 @@
 import React from "react";
 import MyGroupComponent from "./my_groups_component";
+import SuggestedGroups from "./suggested_groups_component";
+
 
 class FindHeaderComponent extends React.Component{
   constructor(props){
@@ -10,6 +12,7 @@ class FindHeaderComponent extends React.Component{
     };
     this.selectPageView = this.selectPageView.bind(this);
     this.swapStates = this.swapStates.bind(this);
+    this.pageDisplayChooser = this.pageDisplayChooser.bind(this);
   }
 
   swapStates(){
@@ -32,9 +35,21 @@ class FindHeaderComponent extends React.Component{
     }
   }
 
-  componentDidMount(){
-    // debugger;
-    // fetchGroups();
+  // componentDidMount(){
+    
+  // }
+
+  pageDisplayChooser(){
+    if(this.state.groups === "selected"){
+      return(
+        <div id="find-main-content">
+          <MyGroupComponent state={this.state} />
+          <SuggestedGroups/>
+        </div>
+      )
+    } else {
+      return null;
+    }
   }
 
   render(){
@@ -65,9 +80,9 @@ class FindHeaderComponent extends React.Component{
           </button>
         </div>
       </div>
-      <div id="find-main-content">
-        <MyGroupComponent state={this.state}/>
-      </div>
+      
+      {this.pageDisplayChooser()}
+      
     </div>
     )
   }

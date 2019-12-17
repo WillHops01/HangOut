@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import MyGroups from "./my_groups";
+import MyGroups from "./groups";
 import { groupToArray } from "../../util/util";
 
 const msp = (currentUser, groups) => {

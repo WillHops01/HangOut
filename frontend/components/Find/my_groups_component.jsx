@@ -68,12 +68,14 @@ class MyGroupComponent extends React.Component{
   }
 
   componentDidMount() {
-    fetchGroups();
+    if (!this.props.groups) {
+      this.fetchGroups();
+    } 
   }
 
   render(){    
     this.myGroups = this.props.groups.current_user_groups;
-    if (this.myGroups){
+    if (this.myGroups){      
       return(
         <div id="my-groups-container">
           {this.buildMyGroups()}          
@@ -90,6 +92,8 @@ const msp = ({entities}) => {
     groups: entities.groups
   })
 }
+
+
 
 
 export default connect(msp, null)(MyGroupComponent);

@@ -14,6 +14,7 @@ User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 user1 = User.create(username: "Will", email: "email@email.com",password: "hunter2",long:125.15,lat:100.15)
 user2 = User.create(username: "edherman", email: "edherman",password: "hunter2",long:125.15,lat:100.15)
+user3 = User.create(username: "santaclaus", email: "santa@north-pole.com",password: "hunter2",long:125.15,lat:100.15)
 demouser = User.create(username: "demouser", email: "DemoUser", password: "hunter2", long:125.15,lat:100.15)
 
 Group.destroy_all
@@ -33,6 +34,18 @@ group3 = user2.created_groups.create(name: "Hipsters Anonymous",
 group4 = user1.created_groups.create(name: "Group 4",
   description: "discuss your coding woes, strategies, and jokes. Up your coding game.",
   long: 125.13, lat: 100.85, image_link: image1)
+
+group5 = user2.created_groups.create(name: "Hike NJ",
+  description: "Hike the scenic trails of New Jersey.",
+  long: 125.13, lat: 100.85, image_link: image2)
+
+group6 = user2.created_groups.create(name: "Spanish / Englishh Conversation Club",
+  description: "Come practice your Spanish / English ",
+  long: 125.13, lat: 100.85, image_link: image3)
+
+group7 = user3.created_groups.create(name: "Group 7",
+  description: "description lalala",
+  long: 125.13, lat: 100.85, image_link: image3)
 
 Member.destroy_all
 membership1 = Member.create(
