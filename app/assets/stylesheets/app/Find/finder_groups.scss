@@ -1,10 +1,43 @@
-#find-groups-main-container{
+#find-main-content{
   display: flex;
   flex-direction: column;
+  margin: 0px 249px 0px;
 
   #find-my-groups-container{
     background-color: blue;
     display: flex;
     flex-direction: column;
   }
+}
+
+#my-groups-wrapper{
+  display: flex;
+  flex-direction: column;
+
+  #my-groups-header{
+    color: rgba(0,0,0,.87);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+    word-spacing: .1em;
+    margin-bottom: 16px;
+  }
+}
+
+.my-groups-row{
+  display: flex;
+  flex-direction: row;
+
+  .mygroup-row-element{
+    padding-right: 16px;
+    margin-bottom: 16px;
+
+    
+  }
+
+  img{
+      width: 200px;
+      height: 180px;
+    }
 }

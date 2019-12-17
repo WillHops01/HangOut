@@ -2,15 +2,31 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchGroups } from "../../actions/group_actions";
 
-class FindGroupComponent extends React.Component{
+class MyGroupComponent extends React.Component{
   constructor(props){
     super(props);
     let myGroups = {};
     this.buildMyGroups = this.buildMyGroups.bind(this);    
+    this.buildMyGroupElement = this.buildMyGroupElement.bind(this);
   }
 
-  componentDidMount(){
-    fetchGroups();
+  buildMyGroupElement(i){
+    let index = this.myGroups[i];    
+    let group = this.props.groups[index];
+    
+    return(
+      <div className="mygroup-row-element-container" 
+            key={group.id}>
+            {/* style="background-image: src="> */}
+        {group.name}
+        <img className="" src={group.image_link} />
+      </div>
+      // <img className="group-element-image" src={group.image_link}>
+      //   <div>
+      //     {group.name}
+      //   </div>
+      // </img>
+    )
   }
 
   buildMyGroups(){
@@ -25,24 +41,31 @@ class FindGroupComponent extends React.Component{
             {subArray}</div>)
           subArray = [];
         }
-        subArray.push(i);
+        subArray.push(this.buildMyGroupElement(i));
         groupArray.push(<div key={i} className="my-groups-row">
           {subArray}</div>)
         break;
       } else if ( i % 3 === 0 && i !== 0){
         groupArray.push(<div key={i} className="my-groups-row">
           {subArray}</div>)
-        subArray = [i];
+        subArray = [this.buildMyGroupElement(i)];
       } else {
-        subArray.push(i);
+        subArray.push(this.buildMyGroupElement(i));
       }     
     }
     
     return(   
       <div id="my-groups-wrapper">
+        <h4 id="my-groups-header">
+          YOUR GROUPS
+        </h4>
         {groupArray}
       </div> 
     )
+  }
+
+  componentDidMount() {
+    fetchGroups();
   }
 
   render(){    
@@ -50,8 +73,7 @@ class FindGroupComponent extends React.Component{
     if (this.myGroups){
       return(
         <div id="my-groups-container">
-          {this.buildMyGroups()}
-          groups built
+          {this.buildMyGroups()}          
         </div>
       )
     } else {
@@ -67,4 +89,4 @@ const msp = ({entities}) => {
 }
 
 
-export default connect(msp, null)(FindGroupComponent);
+export default connect(msp, null)(MyGroupComponent);

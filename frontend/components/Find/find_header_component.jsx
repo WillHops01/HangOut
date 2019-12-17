@@ -1,6 +1,5 @@
 import React from "react";
-import FindGroupComponent from "./find_group_component";
-import { fetchGroups } from "../../actions/group_actions";
+import MyGroupComponent from "./my_groups_component";
 
 class FindHeaderComponent extends React.Component{
   constructor(props){
@@ -66,8 +65,8 @@ class FindHeaderComponent extends React.Component{
           </button>
         </div>
       </div>
-      <div find="find-main-content">
-        <FindGroupComponent state={this.state}/>
+      <div id="find-main-content">
+        <MyGroupComponent state={this.state}/>
       </div>
     </div>
     )
