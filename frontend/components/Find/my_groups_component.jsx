@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchGroups } from "../../actions/group_actions";
+import { withRouter } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import { fetchGroups } from "../../actions/group_actions";
 
 class MyGroupComponent extends React.Component{
   constructor(props){
@@ -14,8 +16,6 @@ class MyGroupComponent extends React.Component{
     let index = this.myGroups[i];    
     let group = this.props.groups[index];
 
-    // backgroundImage: url(group.image_link)
-    //debugger;
     const divStyle = {
       background: `url(${group.image_link})`,
       backgroundSize: `220px 180px`
@@ -24,7 +24,8 @@ class MyGroupComponent extends React.Component{
     return(
       <div className="mygroup-row-element-container" 
             key={group.id}
-            style={divStyle}>
+            style={divStyle}
+            onClick={()=>{this.props.history.push(`/groups/${group.id}`)}}>
         <div className="mygroup-element-title">
           {group.name}
         </div>        
@@ -96,4 +97,4 @@ const msp = ({entities}) => {
 
 
 
-export default connect(msp, null)(MyGroupComponent);
+export default connect(msp, null)(withRouter(MyGroupComponent));
