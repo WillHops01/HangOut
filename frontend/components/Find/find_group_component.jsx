@@ -7,6 +7,8 @@ import { fetchGroups } from "../../actions/group_actions";
 class FindGroupComponent extends React.Component{
   constructor(props){
     super(props);
+    const myGroups = this.props.groups.current_user_groups;
+    debugger;
     this.buildMyGroups = this.buildMyGroups.bind(this);
   }
 
@@ -18,12 +20,14 @@ class FindGroupComponent extends React.Component{
     // const myGroupDiv = this.props.current_user_groups.map((id, idx) => {
 
     // })
+    let numTimes = myGroups.length / 3;
+    
 
     
   }
 
   render(){
-    if (!this.props.groups.current_user_groups){
+    if (!myGroups){
       fetchGroups();
       return null;
     } else {
@@ -32,6 +36,7 @@ class FindGroupComponent extends React.Component{
           <div id="find-my-groups-container">
 
           </div>
+          
 
         </div>
       )

@@ -11,8 +11,8 @@ import {
     Object.freeze(state);
     switch(action.type) {
       case RECEIVE_CURRENT_USER:
-        return { id: action.currentUser.id,
-          membership_ids: action.currentUser.membership_ids };
+        return { id: action.currentUser.id }
+         // membership_ids: action.currentUser.membership_ids };
       case LOGOUT_CURRENT_USER:
         return _nullUser;
       default:
