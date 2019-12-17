@@ -59,7 +59,7 @@ class MyGroupComponent extends React.Component{
     
     return(   
       <div id="my-groups-wrapper">
-        <h4 id="my-groups-header">
+        <h4 className="my-groups-header">
           YOUR GROUPS
         </h4>
         {groupArray}
