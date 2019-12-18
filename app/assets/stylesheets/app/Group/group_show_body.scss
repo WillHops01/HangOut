@@ -19,15 +19,30 @@
 
     #group-show-nav-container{
       display: flex;
-      flex-direction: row;
+      flex-direction: row;      
 
-      padding: 10px 0px 10px 0px;
+      padding: 20px 0px 20px 0px;
       margin: 0px 10% 0px 10%;
 
       #group-nav-clickables-ul{
         display: flex;
         flex-direction: row;
         list-style: none;
+        justify-content: space-between;
+        padding-right: 380px;
+        //width: 40%;
+
+        .group-nav-clickables-li{
+          padding-right: 40px;
+        }
+
+        .group-nav-buttons{
+          font-size: 16px;
+        }
+
+        .selected{
+          color: #00a2c7;
+        }
       }
     }
 }

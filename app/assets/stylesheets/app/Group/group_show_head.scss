@@ -40,6 +40,16 @@
         .group-show-icon-text{
           font-size: 14px;
           line-height: 20px;
+          display: flex;
+          flex-direction: row;
+
+          #group-show-details-creator{
+            font-weight: bold;
+            margin: 0px;
+            margin-left: 3px;
+            font-size: 14px;
+            line-height: 20px;
+          }
         }
       }
 

@@ -18,11 +18,7 @@ class ShowGroupHead extends React.Component{
     const group = this.props.group;
     if (typeof group === "undefined" || typeof group.member_count === "undefined"){
       return null;    
-    }
-      // } else if (typeof group.member_count === "undefined"){
-      //   return null;
-      // }
-    else {        
+    } else {        
       return(
         <div id="group-show-page">
 
@@ -49,15 +45,18 @@ class ShowGroupHead extends React.Component{
                   <img className="group-show-icons"
                     src="/Icons/group.png" />
                   <div className="group-show-icon-text">
-                    Member Count
+                    { group.member_count } members
                   </div>
                 </div>
 
                 <div className="group-show-icon-containers">
                   <img className="group-show-icons"
-                    src="/Icons/group.png" />
+                    src="/Icons/avatar.png" />
                   <div className="group-show-icon-text">
-                    Organized by: 
+                    Organized by{" "}
+                    <h3 id="group-show-details-creator">
+                      {group.creator_name}
+                    </h3>
                   </div>
                 </div>                  
                 
