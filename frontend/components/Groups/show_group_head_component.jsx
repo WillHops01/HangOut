@@ -1,27 +1,28 @@
 import React from "react";
 import GroupShowBody from "./group_show_body_component";
-import { fetchOneGroup } from "../../actions/group_actions";
 
 class ShowGroupHead extends React.Component{
   constructor(props){
-    super(props);
-    debugger;
+    super(props);    
     this.fetchGroup = this.props.fetchOneGroup;
   }
 
-  componentDidMount(){
-    this.fetchGroup(this.props.match.params.groupId);  
-    
-    if (!this.props.group){
-      this.fetchGroup(this.props.match.params.groupId);      
-    }
+  componentDidMount(){  
+    if (typeof this.props.group === "undefined" || typeof this.props.group.member_count === "undefined") {
+      this.fetchGroup(this.props.match.params.groupId);  
+    }      
   }
 
   render(){  
     
     const group = this.props.group;
-    debugger
-    if (group){
+    if (typeof group === "undefined" || typeof group.member_count === "undefined"){
+      return null;    
+    }
+      // } else if (typeof group.member_count === "undefined"){
+      //   return null;
+      // }
+    else {        
       return(
         <div id="group-show-page">
 
@@ -71,10 +72,7 @@ class ShowGroupHead extends React.Component{
           <GroupShowBody group={this.props.group}/>
         </div>
       )
-    } else {
-      return null;
-    } 
-    
+    }     
   }
   
 }

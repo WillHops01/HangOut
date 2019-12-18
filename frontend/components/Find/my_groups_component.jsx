@@ -69,22 +69,19 @@ class MyGroupComponent extends React.Component{
     )
   }
 
-  componentDidMount() {
-    debugger;
+  componentDidMount() {    
     if (typeof this.props.groups.current_user_groups === "undefined") {
       this.props.fetchGroups();
     }
   }
 
   render(){    
-    if (typeof this.props.groups.current_user_groups === "undefined"){
-      debugger
-      this.props.fetchGroups();
-      debugger;
+    if (typeof this.props.groups.current_user_groups === "undefined"){      
+      //this.props.fetchGroups();
       return null;
     }
     this.myGroups = this.props.groups.current_user_groups;
-    debugger
+    // debugger
     if (this.myGroups){      
       return(
         <div id="my-groups-container">

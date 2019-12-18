@@ -42,16 +42,15 @@ class SuggestedGroups extends React.Component{
   }
 
   componentDidMount(){
-    // debugger;
-    if(this.props.groups.length === 0){
+    //check for length <= 1 because can navigate from group show page
+    if(this.props.groups.length <= 1){
       debugger;
       fetchGroups();
     }
   }
 
-  render(){
-    //const suggestedGroups = this.props.groups;    
-    if (Object.keys(this.props.groups).length > 0 ){
+  render(){ 
+    if (Object.keys(this.props.groups).length > 1 ){
       
       return(
         <div id="suggested-groups-main-container">

@@ -11,11 +11,9 @@ const GroupsReducer = (state = {}, action) => {
       return newState;
     case GET_ALL_GROUPS:      
       return Object.assign({}, action.groups);
-    case RECEIVE_ONE_GROUP:      
-      //let newState = Object.assign({}, state); 
-      newState[action.group.id] = action.group;
-      debugger;
-      return newState;
+    case RECEIVE_ONE_GROUP:       
+      let nextState = Object.assign({},newState, { [action.group.id]:action.group });     
+      return nextState;
     default:
       return state;
   }

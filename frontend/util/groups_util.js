@@ -5,8 +5,7 @@ export const getGroups = () => (
   })
 );
 
-export const getOneGroup = (groupId) => {
-  debugger;
+export const getOneGroup = (groupId) => {  
   return(
     $.ajax({
       method: "GET",
