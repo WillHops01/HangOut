@@ -5,40 +5,58 @@ class ShowMembershipDropdown extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      selected: "dropdown-NOT-selected"
+      selected: "dropdown-hidden"
     }
-    this.renderMember = this.renderMember.bind(this);
-    this.group = this.props.group;
+    this.renderMember = this.renderMember.bind(this);    
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+  }
+
+  toggleDropdown(){    
+    if (this.state.selected === "dropdown-hidden"){
+      this.setState({selected: "dropdown-shown"})
+    } else {
+      this.setState({ selected: "dropdown-hidden"})
+    }
   }
 
   renderMember(){
-    if (this.state.selected === "dropdown-NOT-selected") {
-      return (
-        <button id="show-member-dropdown">
-          <span>
+
+    return(
+      <div id="member-dropdown-outer-container">
+        <button id="member-dropdown-button"
+                onClick={()=>this.toggleDropdown()}>
+          <div id="member-dropdown-inner">
             You're a member
-          </span>
+          </div>
         </button>
-      )
-    } else {
-      return (
-        <div>
-          <ul>
-            <li>teste</li>
-          </ul>
+
+        <div className={this.state.selected}> 
+          <div>
+            test
+          </div>
+          <div>
+            other test
+          </div>
+          Shown
         </div>
-      )
-    }
+      </div>
+      
+    )
   }
 
   render(){    
-    if (this.group.member_list.includes(this.props.current_user_id)){
+    const group = this.props.group;
+    if (group.member_list.includes(this.props.current_user_id)){
       //current user is member
       return (
         this.renderMember()
       )
     } else {      
-      return null;
+      return (
+        <div>
+          Join this Group
+        </div>        
+      )
     }
   }
 }

@@ -1,0 +1,36 @@
+#member-dropdown-outer-container{
+  position: relative;
+
+  #member-dropdown-button{
+    #member-dropdown-inner{
+      background-color: rgb(246,247,248);
+      padding: 10px 20px 10px;
+      border: 1.5px solid rgba(46,62,72,.12); 
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      color: grey;
+    }
+  }
+
+  .dropdown-hidden{
+    display: none;
+  }
+
+  .dropdown-shown{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow: visible;
+    background-color: red;
+    div{
+      position: relative;
+      z-index: 100;
+    }
+    
+  }
+  
+}
+
+

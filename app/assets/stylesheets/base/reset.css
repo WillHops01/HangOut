@@ -15,7 +15,7 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent;
   z-index:0;
-  font-weight: 500px;
+  font-weight: 500;
   font-size: 13px;
   color: rgba(0,0,0,.87);
 }
