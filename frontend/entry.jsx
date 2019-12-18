@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { HashRouter, Route } from 'react-router-dom';
 import App from "./components/app";
 import configureStore from "./store/store";
-import { fetchGroups } from "./actions/group_actions";
+import { fetchGroups, fetchOneGroup } from "./actions/group_actions";
 
 
 
@@ -42,9 +42,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.store = store;
   window.dispatch = store.dispatch;
   window.changeDropdownState = changeDropdownState;
+  window.fetchOneGroup = fetchOneGroup;
 
   //END TESTING
-  window.dispatch(fetchGroups());
+  //window.dispatch(fetchGroups());
   //debugger
   ReactDOM.render(<Root store={store} />, root);
 })

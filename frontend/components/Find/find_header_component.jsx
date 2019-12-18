@@ -40,10 +40,10 @@ class FindHeaderComponent extends React.Component{
   // }
 
   pageDisplayChooser(){
-    if(this.state.groups === "selected"){
+    if(this.state.groups === "selected"){      
       return(
         <div id="find-main-content">
-          <MyGroupComponent state={this.state} />
+          <MyGroupComponent />
           <SuggestedGroups/>
         </div>
       )

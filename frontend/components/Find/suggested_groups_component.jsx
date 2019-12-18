@@ -42,7 +42,9 @@ class SuggestedGroups extends React.Component{
   }
 
   componentDidMount(){
-    if(!this.props.groups){
+    // debugger;
+    if(this.props.groups.length === 0){
+      debugger;
       fetchGroups();
     }
   }

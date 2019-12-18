@@ -1,22 +1,30 @@
 import React from "react";
+import GroupShowBody from "./group_show_body_component";
 import { fetchOneGroup } from "../../actions/group_actions";
 
-class ShowGroup extends React.Component{
+class ShowGroupHead extends React.Component{
   constructor(props){
     super(props);
+    debugger;
+    this.fetchGroup = this.props.fetchOneGroup;
   }
 
   componentDidMount(){
+    this.fetchGroup(this.props.match.params.groupId);  
+    
     if (!this.props.group){
-      fetchOneGroup(this.props.match.params.groupId);
+      this.fetchGroup(this.props.match.params.groupId);      
     }
   }
 
   render(){  
+    
     const group = this.props.group;
+    debugger
     if (group){
       return(
         <div id="group-show-page">
+
           <div id="group-show-head-container">
             <section id="group-show-head">
               <img id="group-show-head-img"
@@ -54,9 +62,13 @@ class ShowGroup extends React.Component{
                 
               </div>
             </section>
-
-          </div>
+          </div> 
+            {/* end of head container */}
           
+          
+
+          {/* START MAIN PAGE */}
+          <GroupShowBody group={this.props.group}/>
         </div>
       )
     } else {
@@ -67,4 +79,4 @@ class ShowGroup extends React.Component{
   
 }
 
-export default ShowGroup;
+export default ShowGroupHead;

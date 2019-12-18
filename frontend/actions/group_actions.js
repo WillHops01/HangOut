@@ -6,6 +6,7 @@ export const RECEIVE_ONE_GROUP = "RECEIVE_ONE_GROUP";
 
 
 export const fetchGroups = () => dispatch =>{
+  debugger;
   getGroups().then(groups => (
     dispatch(receiveGroups(groups))
   ));
@@ -16,6 +17,7 @@ export const createGroupThunk = (group) => dispatch => {
 };
 
 export const fetchOneGroup = (groupId) => dispatch =>{
+  debugger;
   getOneGroup(groupId).then(group => dispatch(receiveOneGroup(group)));
 };
 
@@ -24,8 +26,11 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveOneGroup = group => ({
+export const receiveOneGroup = group => {
+  debugger;
+  return({
   type: RECEIVE_ONE_GROUP,
   group
 });
+};
 

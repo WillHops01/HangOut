@@ -5,12 +5,15 @@ export const getGroups = () => (
   })
 );
 
-export const getOneGroup = (groupId) => (
-  $.ajax({
-    method: "GET",
-    url: `api/groups/${groupId}`
-  })
-);
+export const getOneGroup = (groupId) => {
+  debugger;
+  return(
+    $.ajax({
+      method: "GET",
+      url: `api/groups/${groupId}`
+    })
+  );
+};
 
 export const createGroup = group => (
   $.ajax({
@@ -18,4 +21,4 @@ export const createGroup = group => (
     url: `api/groups`,
     data: { group }
   })
-)
+);

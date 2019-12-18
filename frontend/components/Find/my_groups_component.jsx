@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+
 // import { Link } from "react-router-dom";
-// import { fetchGroups } from "../../actions/group_actions";
+import { fetchGroups } from "../../actions/group_actions";
 
 class MyGroupComponent extends React.Component{
   constructor(props){
@@ -69,13 +70,21 @@ class MyGroupComponent extends React.Component{
   }
 
   componentDidMount() {
-    if (!this.props.groups) {
-      this.fetchGroups();
-    } 
+    debugger;
+    if (typeof this.props.groups.current_user_groups === "undefined") {
+      this.props.fetchGroups();
+    }
   }
 
   render(){    
+    if (typeof this.props.groups.current_user_groups === "undefined"){
+      debugger
+      this.props.fetchGroups();
+      debugger;
+      return null;
+    }
     this.myGroups = this.props.groups.current_user_groups;
+    debugger
     if (this.myGroups){      
       return(
         <div id="my-groups-container">
@@ -94,7 +103,13 @@ const msp = ({entities}) => {
   })
 }
 
+const mdp = dispatch => {
+  return {
+    fetchGroups: () => dispatch(fetchGroups())
+  };
+};
 
 
 
-export default connect(msp, null)(withRouter(MyGroupComponent));
+
+export default connect(msp, mdp)(withRouter(MyGroupComponent));

@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
-import ShowGroup from "./show_group_component";
+import ShowGroup from "./show_group_head_component";
+import { fetchOneGroup } from "../../actions/group_actions";
+
 
 const msp = (state, ownProps) => {  
   return({
@@ -7,4 +9,12 @@ const msp = (state, ownProps) => {
   });
 };
 
-export default connect(msp)(ShowGroup);
+const mdp = dispatch => {
+  return{
+    fetchOneGroup: id => dispatch(fetchOneGroup(id))
+  };
+};
+
+
+
+export default connect(msp, mdp)(ShowGroup);
