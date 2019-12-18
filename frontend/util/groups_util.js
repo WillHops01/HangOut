@@ -11,3 +11,11 @@ export const getOneGroup = (groupId) => (
     url: `api/groups/${groupId}`
   })
 );
+
+export const createGroup = group => (
+  $.ajax({
+    method: "POST",
+    url: `api/groups`,
+    data: { group }
+  })
+)

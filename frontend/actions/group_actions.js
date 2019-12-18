@@ -1,13 +1,18 @@
-import { getGroups, getOneGroup } from "../util/groups_util";
+import { getGroups, getOneGroup, createGroup } from "../util/groups_util";
 
 
 export const GET_ALL_GROUPS = "GET_ALL_GROUPS";
 export const RECEIVE_ONE_GROUP = "RECEIVE_ONE_GROUP";
 
+
 export const fetchGroups = () => dispatch =>{
   getGroups().then(groups => (
     dispatch(receiveGroups(groups))
   ));
+};
+
+export const createGroupThunk = (group) => dispatch => {
+  createGroup(group).then(group => dispatch(receiveOneGroup(group)));
 };
 
 export const fetchOneGroup = (groupId) => dispatch =>{

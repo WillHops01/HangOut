@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchGroups } from "../../actions/group_actions";
+import { withRouter } from "react-router-dom";
 
 class SuggestedGroups extends React.Component{
   constructor(props){
@@ -24,6 +25,7 @@ class SuggestedGroups extends React.Component{
         }      
         return (
           <div className="suggested-group-element" key={idx}
+              onClick={()=>{this.props.history.push(`/groups/${groupId}`)}}
                 style={{
                   background: `url(${group.image_link})`,
                   backgroundSize: `310px 180px`
@@ -70,4 +72,4 @@ const msp = ({entities}) => ({
   groups: entities.groups
 });
 
-export default connect(msp)(SuggestedGroups);
+export default connect(msp)(withRouter(SuggestedGroups));
