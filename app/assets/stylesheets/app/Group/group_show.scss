@@ -1,6 +1,7 @@
 #group-show-page{
   display: flex;
   flex-direction: column;
+  border-top: 1px solid rgba(46,62,72,.12);
 
   #group-show-head{
     display: flex;
@@ -8,13 +9,40 @@
     margin: 20px 10% 20px;
     
 
-    img{
+    #group-show-head-img{
       max-width: 600px;
+      padding-right:48px;
     }
 
     #group-show-head-details{
       display: flex;
       flex-direction: column;
+      text-align: center;
+
+      #group-show-details-title{
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 18px;
+      }
+
+      .group-show-icon-containers{
+        display: flex;
+        flex-direction: row;
+        margin: 3.5px 0px 3.5px;
+        //padding: 5px 0px 5px 0px;
+        //justify-content: center;
+        align-items: center;
+        .group-show-icon-text{
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+
+      .group-show-icons{
+          height: 1.5em;
+          width: auto;
+          margin-right: 5px;
+        }
     }
   }
 }

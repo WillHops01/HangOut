@@ -19,14 +19,39 @@ class ShowGroup extends React.Component{
         <div id="group-show-page">
           <div id="group-show-head-container">
             <section id="group-show-head">
-              <img src={group.image_link} />
+              <img id="group-show-head-img"
+                src={group.image_link} />
+
               <div id="group-show-head-details">
                 <div id="group-show-details-title">
                   {group.name}
                 </div>
-                <div>
-                  {group.description}
+
+                <div className="group-show-icon-containers">
+                  <img className="group-show-icons"
+                    src="/Icons/placeholder.png" />
+                  <div className="group-show-icon-text">
+                    {/* PLACEHOLDER */}
+                    New York, NY
+                  </div>
                 </div>
+
+                <div className="group-show-icon-containers">
+                  <img className="group-show-icons"
+                    src="/Icons/group.png" />
+                  <div className="group-show-icon-text">
+                    Member Count
+                  </div>
+                </div>
+
+                <div className="group-show-icon-containers">
+                  <img className="group-show-icons"
+                    src="/Icons/group.png" />
+                  <div className="group-show-icon-text">
+                    Organized by: 
+                  </div>
+                </div>                  
+                
               </div>
             </section>
 
