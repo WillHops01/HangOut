@@ -1,4 +1,5 @@
 import React from "react";
+import ShowAbout from "./show_about_component";
 
 class GroupShowBody extends React.Component{
   constructor(props){
@@ -10,9 +11,16 @@ class GroupShowBody extends React.Component{
     };
     this.renderNavBar = this.renderNavBar.bind(this);
     this.changeSelect = this.changeSelect.bind(this);
+    this.renderBody = this.renderBody.bind(this);
   }
 
   changeSelect(buttonTitle){
+    //check if click is on already selected element
+    if (this.state[buttonTitle] === "selected"){
+      return;
+    }
+
+    //else
     let newState = {};
     Object.keys(this.state).forEach(key => {      
       if(key === buttonTitle){
@@ -24,10 +32,11 @@ class GroupShowBody extends React.Component{
     this.setState(newState);    
   }
 
-  renderNavBar(){
+  renderNavBar(){    
     return(
       <section id="group-show-navigation">
         <div id="group-show-nav-container">
+
           <ul id="group-nav-clickables-ul">
             <li className="group-nav-clickables-li">
               <button className={`${this.state.about} group-nav-buttons`}
@@ -43,7 +52,7 @@ class GroupShowBody extends React.Component{
             </li>
             <li className="group-nav-clickables-li">
               <button className={`${this.state.members} group-nav-buttons`}
-                      onClick={() => this.changeSelect("events")}>
+                      onClick={() => this.changeSelect("members")}>
                 Members
               </button>
             </li>
@@ -58,22 +67,20 @@ class GroupShowBody extends React.Component{
   }
 
   renderBody(){
-    
+    if(this.state.about === "selected"){
+      return ( <ShowAbout group={this.props.group}/> )
+    } else {
+      return null;
+    }
   }
 
   render(){
     return(
       <div id="group-show-body-container">    
         {this.renderNavBar()} 
+        {this.renderBody()}
+        
 
-        <div id="group-show-body">
-          <section className="group-show-body-section">
-            Left
-          </section>
-          <section className="group-show-body-section">
-            Right
-          </section>
-        </div>
       </div>
     )
   }

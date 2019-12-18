@@ -1,36 +1,26 @@
-#group-show-body{
+#group-show-body-container{
   border-top: 1px solid rgba(46,62,72,.12);
   display: flex;
-  flex-direction: row;
-
-  .group-show-body-section{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(246,247,248);
-    // width: 100vw;
-    // height: 25vh;
-
-
-
-  }
+  flex-direction: column;
 }
 
 #group-show-navigation{
 
     #group-show-nav-container{
       display: flex;
-      flex-direction: row;      
+      flex-direction: row; 
+      justify-content: space-between;     
 
       padding: 20px 0px 20px 0px;
-      margin: 0px 10% 0px 10%;
+      margin: 0px 20% 0px;
 
       #group-nav-clickables-ul{
         display: flex;
         flex-direction: row;
         list-style: none;
         justify-content: space-between;
-        padding-right: 380px;
-        //width: 40%;
+        //padding-right: 380px;
+        width: 60%;
 
         .group-nav-clickables-li{
           padding-right: 40px;
@@ -43,6 +33,11 @@
         .selected{
           color: #00a2c7;
         }
+      }
+
+      #group-nav-member-status{
+        text-align: left;
+        //width: 40%;
       }
     }
 }
