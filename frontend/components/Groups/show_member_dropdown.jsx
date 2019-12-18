@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 
 class ShowMembershipDropdown extends React.Component{
   constructor(props){
@@ -9,33 +8,38 @@ class ShowMembershipDropdown extends React.Component{
       selected: "dropdown-NOT-selected"
     }
     this.renderMember = this.renderMember.bind(this);
-    const group = this.props.group;
+    this.group = this.props.group;
   }
 
   renderMember(){
     if (this.state.selected === "dropdown-NOT-selected") {
       return (
         <button id="show-member-dropdown">
-
+          <span>
+            You're a member
+          </span>
         </button>
       )
     } else {
       return (
         <div>
           <ul>
-            <li></li>
+            <li>teste</li>
           </ul>
         </div>
       )
     }
   }
 
-  render(){
-    // if (this.group.member_list.includes())    
-    return(
-      null
-    )
-    
+  render(){    
+    if (this.group.member_list.includes(this.props.current_user_id)){
+      //current user is member
+      return (
+        this.renderMember()
+      )
+    } else {      
+      return null;
+    }
   }
 }
 

@@ -52,7 +52,18 @@ class FindHeaderComponent extends React.Component{
     }
   }
 
-  render(){
+  componentDidMount(){
+    if(typeof this.props.groups === "undefined"){
+      this.props.fetchGroups();
+    }
+  }
+
+  render(){    
+    if (typeof this.props.groups === "undefined") {
+      debugger;
+      return null;
+    }
+
     return(
     <div id="find-page">
       <div id="find-header">
