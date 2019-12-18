@@ -13,7 +13,7 @@ const GroupShowAbout = ({group}) => {
             What we're about
           </span>
           <span id="groupshow-description">
-            { group.description }
+            { group.description } plus other really long strings string string
           </span>
         </div>
       </section>
