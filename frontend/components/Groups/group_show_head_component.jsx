@@ -5,10 +5,11 @@ class ShowGroupHead extends React.Component{
   constructor(props){
     super(props);    
     this.fetchGroup = this.props.fetchOneGroup;
+    const group = props.group    
   }
 
   componentDidMount(){  
-    if (typeof this.props.group === "undefined" || typeof this.props.group.member_count === "undefined") {
+    if (typeof this.group === "undefined" || !this.group.hasOwnProperty("member_list")){
       this.fetchGroup(this.props.match.params.groupId);  
     }      
   }

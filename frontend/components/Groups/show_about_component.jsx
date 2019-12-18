@@ -8,6 +8,7 @@ const GroupShowAbout = ({group}) => {
 
       <section id="group-show-about-left"
                 className="group-show-about-half">
+                  
         <div id="groupshow-description-container">
           <span className="about-title">
             What we're about

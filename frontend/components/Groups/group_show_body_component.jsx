@@ -1,5 +1,7 @@
 import React from "react";
 import ShowAbout from "./show_about_component";
+import ShowMemberDropdown from "./show_member_dropdown";
+import { Route } from "react-router-dom";
 
 class GroupShowBody extends React.Component{
   constructor(props){
@@ -32,7 +34,7 @@ class GroupShowBody extends React.Component{
     this.setState(newState);    
   }
 
-  renderNavBar(){    
+  renderNavBar(){
     return(
       <section id="group-show-navigation">
         <div id="group-show-nav-container">
@@ -58,9 +60,10 @@ class GroupShowBody extends React.Component{
             </li>
           </ul>
 
-          <div id="group-nav-member-status">
+          {/* <div id="group-nav-member-status">
             JOIN TODAY
-          </div>
+          </div> */}
+          <Route component={ShowMemberDropdown} />
         </div>
       </section>
     )
