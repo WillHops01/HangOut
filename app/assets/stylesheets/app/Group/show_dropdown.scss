@@ -1,17 +1,5 @@
 #member-dropdown-outer-container{
-  position: relative;
-
-  #member-dropdown-button{
-    #member-dropdown-inner{
-      background-color: rgb(246,247,248);
-      padding: 10px 20px 10px;
-      border: 1.5px solid rgba(46,62,72,.12); 
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: 600;
-      color: grey;
-    }
-  }
+  position: relative;  
 
   .dropdown-hidden{
     display: none;
@@ -51,14 +39,38 @@
           
         }
       }
-
-      // .member-dropdown-list-button{
-        
-      // }
-    }
-    
-  }
-  
+    }    
+  }  
 }
+
+#member-dropdown-button{
+    
+    .member-dropdown-inner{      
+      padding: 10px 20px 10px;
+      border: 1.5px solid rgba(46,62,72,.12); 
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      
+    }
+
+    .already-member{
+      background-color: rgb(246,247,248);
+      color: grey;
+
+      &:hover{
+        background-color: rgb(197,196,196);
+      }
+    }
+
+    .join-group{
+      background-color: rgb(246,88,88);
+      color: white;
+
+      &:hover{
+        background-color: rgba(246,88,88,.7);
+      }
+    }
+  }
 
 

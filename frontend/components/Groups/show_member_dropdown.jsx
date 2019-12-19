@@ -27,7 +27,7 @@ class ShowMembershipDropdown extends React.Component{
       <div id="member-dropdown-outer-container">
         <button id="member-dropdown-button"
                 onClick={()=>this.toggleDropdown()}>
-          <div id="member-dropdown-inner">
+          <div className="member-dropdown-inner already-member">
             You're a member
           </div>
         </button>
@@ -66,9 +66,12 @@ class ShowMembershipDropdown extends React.Component{
       )
     } else {      
       return (
-        <button onClick={() => this.createMember()}>
-          Join this Group
-        </button>        
+        <button id="member-dropdown-button"
+          onClick={() => this.createMember()}>
+          <div className="member-dropdown-inner join-group">
+            Join this group
+          </div>
+        </button>      
       )
     }
   }
