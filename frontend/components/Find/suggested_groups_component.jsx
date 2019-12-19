@@ -14,7 +14,7 @@ class SuggestedGroups extends React.Component{
   loadSuggestedGroups(){
     //TODO: Put location logic here
     
-    let userGroups = this.props.groups.current_user_groups;
+    let userGroups = this.props.current_user.current_user_groups;
     
     const suggestedGroupEles = Object.keys(this.props.groups).map((groupId, idx) => {
       let group = this.props.groups[groupId];
@@ -69,8 +69,9 @@ class SuggestedGroups extends React.Component{
   }
 }
 
-const msp = ({entities}) => ({
-  groups: entities.groups
+const msp = ({entities, session}) => ({
+  groups: entities.groups,
+  current_user: entities.users[session.id]
 });
 
 export default connect(msp)(withRouter(SuggestedGroups));

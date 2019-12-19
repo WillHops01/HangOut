@@ -7,13 +7,15 @@ import { fetchGroups } from "../../actions/group_actions";
 
 class MyGroupComponent extends React.Component{
   constructor(props){
-    super(props);
-    let myGroups = {};
+    super(props);    
     this.buildMyGroups = this.buildMyGroups.bind(this);    
-    this.buildMyGroupElement = this.buildMyGroupElement.bind(this);
+    this.buildMyGroupElement = this.buildMyGroupElement.bind(this);    
+    this.state = {
+      fetched: false
+    }
   }
 
-  buildMyGroupElement(i){
+  buildMyGroupElement(i){    
     let index = this.myGroups[i];    
     let group = this.props.groups[index];
 
@@ -34,8 +36,7 @@ class MyGroupComponent extends React.Component{
     )
   }
 
-  buildMyGroups(){
-
+  buildMyGroups(){    
     let groupArray = [];
     let subArray = [];
     //TODO: CLEAN UP THIS LOGIC
@@ -70,16 +71,18 @@ class MyGroupComponent extends React.Component{
   }
 
   componentDidMount() {    
-    if (typeof this.props.groups.current_user_groups === "undefined") {
-      this.props.fetchGroups();
+    if (!this.state.fetched) {
+      this.props.fetchGroups().then(() =>
+        this.setState({fetched: true})
+      )
     }
   }
 
-  render(){       
-    if (typeof this.props.groups.current_user_groups === "undefined"){ 
+  render(){          
+    if (!this.state.fetched){ 
       return null;
     } else {
-        this.myGroups = this.props.groups.current_user_groups;
+        this.myGroups = this.props.current_user.current_user_groups;
         if (this.myGroups) {
           return (
             <div id="my-groups-container">
@@ -94,9 +97,11 @@ class MyGroupComponent extends React.Component{
     
 }
 
-const msp = ({entities}) => {    
+const msp = ({entities, session}) => { 
+  let user = entities.users[session.id]  
   return({
-    groups: entities.groups
+    groups: entities.groups,
+    current_user: user
   })
 }
 

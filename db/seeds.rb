@@ -77,15 +77,31 @@ membership3 = Member.create(
   user: user2,
   group: group2
 )
+Member.create(
+  user: user2,
+  group: group3
+)
 membership6 = Member.create(
   user: user1,
   group: group4
 )
-#DEMO USER GROUPS
-membership4 = Member.create(
-  user: demouser,
-  group: group1
+Member.create(
+  user: user2,
+  group: group5
 )
+Member.create(
+  user: user2,
+  group: group6
+)
+Member.create(
+  user: user1,
+  group: group10
+)
+#DEMO USER GROUPS
+# membership4 = Member.create(
+#   user: demouser,
+#   group: group1
+# )
 membership5 = Member.create(
   user: demouser,
   group: group2
@@ -94,7 +110,19 @@ membership7 = Member.create(
   user: demouser,
   group: group3
 )
-membership8 = Member.create(
+# membership8 = Member.create(
+#   user: demouser,
+#   group: group4
+# )
+Member.create(
+  user: user3,
+  group: group7
+)
+Member.create(
+  user: user3,
+  group: group8
+)
+Member.create(
   user: demouser,
-  group: group4
+  group: group9
 )

@@ -1,3 +1,5 @@
+$highlight-blue: #00a2c7;
+
 #user-nav-icon-container{
   position: absolute;
   right: 50px;
@@ -42,6 +44,15 @@
       
       // margin: 0px 20px;
       border-bottom: 1px solid rgba(0,0,0,.12);
+
+      button{
+        font-size: 16px;
+
+        &:hover{
+        color: $highlight-blue;
+        }
+      }
+      
       
       span{
         font-size: 16px;

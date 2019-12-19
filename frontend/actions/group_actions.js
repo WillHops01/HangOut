@@ -7,9 +7,9 @@ export const RECEIVE_NEW_MEMBER = "RECEIVE_NEW_MEMBER";
 
 
 export const fetchGroups = () => dispatch =>{  
-  getGroups().then(groups => (
+  return(getGroups().then(groups => (
     dispatch(receiveGroups(groups))
-  ));
+  )))
 };
 
 export const createGroupThunk = (group) => dispatch => {
@@ -20,8 +20,6 @@ export const fetchOneGroup = (groupId) => dispatch =>{
   getOneGroup(groupId).then(group => dispatch(receiveOneGroup(group)));
 };
 
-//import session action current user, dispatch multiple actions?
-
 export const createMemberThunk = (member) => dispatch => {
   createMember(member).then(payload => {    
     dispatch(receiveOneGroup(payload));
@@ -30,9 +28,9 @@ export const createMemberThunk = (member) => dispatch => {
 }
 
 export const destroyMemberThunk = (member) => dispatch => {  
-  deleteMember(member).then(payload => {
-    dispatch(receiveOneGroup(payload));
-    dispatch(receiveNewMembership(payload.current_user_groups));
+  deleteMember(member).then(payload => {    
+    dispatch(receiveOneGroup(payload));    
+    dispatch(receiveNewMembership(payload.user));
   })
 }
 
@@ -49,7 +47,7 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveOneGroup = ({group}) => {      
+export const receiveOneGroup = ({group}) => {        
   return({
   type: RECEIVE_ONE_GROUP,
   group

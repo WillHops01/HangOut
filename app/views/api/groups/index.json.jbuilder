@@ -4,8 +4,8 @@
   end
 end
 
-if logged_in?
-  json.current_user_groups current_user.groups.pluck(:id)
+# if logged_in?
+#   json.current_user_groups current_user.groups.pluck(:id)
   
-  #current_user.groups.map{|group| group.id }
-end
+#   #current_user.groups.map{|group| group.id }
+# end

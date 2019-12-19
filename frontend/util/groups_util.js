@@ -34,7 +34,7 @@ export const createMember = (member) => {
   )
 }
 
-export const deleteMember = (member) => {  
+export const deleteMember = (member) => {    
   return(
     $.ajax({
       method: "DELETE",

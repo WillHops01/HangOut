@@ -12,6 +12,8 @@ class Banner extends React.Component {
         this.state = {
             status: "hidden"
         };
+        this.userGroups = this.userGroups.bind(this);
+        this.clickToGroup = this.clickToGroup.bind(this);
     }
 
     changeDropdownState(){        
@@ -32,7 +34,49 @@ class Banner extends React.Component {
 
     }
 
-    loggedInHeader(){           
+    clickToGroup(id){
+        this.props.history.push(`/groups/${id}`);
+    }
+
+    userGroups(){        
+        if (this.state.status === "displayed"){
+            let groups = this.props.groups;
+            let current_user_groups = this.props.currentUser.current_user_groups
+
+            if (Object.keys(groups).length >= current_user_groups.length) {
+                let groupnames = current_user_groups.map((groupId, idx) => {                    
+                    if (idx < 3) {
+                        return (
+                            <li key={idx}>
+                                <button onMouseDown={() => this.clickToGroup(groupId)}>
+                                    {groups[groupId].name}
+                                </button>                                
+                            </li>
+                        )
+                    } else {
+                        return
+                    }
+                })                
+                return (
+                    <div id="dropdown-group-names">
+                        <ul>
+                            {groupnames}
+                        </ul>
+                    </div>
+                )
+            } else {
+                return (
+                    <div id="dropdown-group-names">
+
+                    </div>
+                )
+            }
+        }
+        
+    }
+
+    loggedInHeader(){   
+        const currentUser = this.props.currentUser        
         return(
             <div id="user-nav-icon-container">
                 <button tabIndex="0"
@@ -41,29 +85,11 @@ class Banner extends React.Component {
                     <img src="/letter_image.png"/>
                 </button>
                 <nav id={this.state.status}>
-                    <div id="dropdown-group-names"> 
-                        <ul>
-                            <li>
-                                <span>
-                                    Long Multi-Line Group Name One
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    Medium Group Name 2
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    Short Group 3
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
+                    { this.userGroups()}
                     <div id="dropdown-nav-options">
-                        <button className="dropdown-nav-Items">
+                        {/* <button className="dropdown-nav-Items">
                             Testing Button
-                        </button>
+                        </button> */}
                         <button className="dropdown-nav-Items"
                             onMouseDown={this.clicktoClose}>
                                 Log Out

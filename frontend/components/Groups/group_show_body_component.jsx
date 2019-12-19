@@ -70,7 +70,7 @@ class GroupShowBody extends React.Component{
   }
 
   renderBody(){
-    if(this.state.about === "selected"){
+    if(this.state.about === "selected"){      
       return ( <ShowAbout group={this.props.group}/> )
     } else {
       return null;

@@ -1,3 +1,5 @@
+$highlight-blue: #00a2c7;
+
 #group-show-body-container{
   border-top: 1px solid rgba(46,62,72,.12);
   display: flex;
@@ -34,7 +36,7 @@
         }
 
         .selected{
-          color: #00a2c7;
+          color: $highlight-blue;
         }
       }
 

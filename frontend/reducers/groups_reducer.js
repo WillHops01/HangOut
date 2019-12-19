@@ -5,18 +5,18 @@ const GroupsReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {
-    case RECEIVE_CURRENT_USER:
-      //let newState = Object.assign({},state);     
-      newState.current_user_groups = action.currentUser.current_user_groups;
-      return newState;
+    // case RECEIVE_CURRENT_USER:
+    //   //let newState = Object.assign({},state);     
+    //   newState.current_user_groups = action.currentUser.current_user_groups;
+    //   return newState;
     case GET_ALL_GROUPS:      
       return Object.assign({}, action.groups);
-    case RECEIVE_ONE_GROUP:       
+    case RECEIVE_ONE_GROUP: 
       let nextState = Object.assign({},newState, { [action.group.id]:action.group });     
       return nextState;
-    case RECEIVE_NEW_MEMBER:      
-      newState.current_user_groups = action.membership;
-      return newState;
+    // case RECEIVE_NEW_MEMBER:      
+    //   newState.current_user_groups = action.membership;
+    //   return newState;
     default:
       return state;
   }
