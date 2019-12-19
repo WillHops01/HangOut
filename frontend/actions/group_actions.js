@@ -29,8 +29,9 @@ export const createMemberThunk = (member) => dispatch => {
   })
 }
 
-export const receiveNewMembership = membership => {
-  debugger
+
+
+export const receiveNewMembership = membership => {  
   return({
     type: RECEIVE_NEW_MEMBER,
     membership
@@ -42,8 +43,7 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveOneGroup = ({group}) => {   
-  debugger; 
+export const receiveOneGroup = ({group}) => {      
   return({
   type: RECEIVE_ONE_GROUP,
   group

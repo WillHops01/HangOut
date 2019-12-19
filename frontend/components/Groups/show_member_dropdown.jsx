@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { createMemberThunk } from "../../actions/group_actions";
 
 class ShowMembershipDropdown extends React.Component{
   constructor(props){
@@ -9,15 +10,16 @@ class ShowMembershipDropdown extends React.Component{
     }
     this.renderMember = this.renderMember.bind(this);    
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.createMember = this.createMember.bind(this);
   }
 
-  toggleDropdown(){    
+  toggleDropdown(){   
     if (this.state.selected === "dropdown-hidden"){
       this.setState({selected: "dropdown-shown"})
     } else {
       this.setState({ selected: "dropdown-hidden"})
     }
-  }
+  } 
 
   renderMember(){
 
@@ -30,18 +32,29 @@ class ShowMembershipDropdown extends React.Component{
           </div>
         </button>
 
-        <div className={this.state.selected}> 
-          <div>
-            test
-          </div>
-          <div>
-            other test
-          </div>
-          Shown
+        <div className={this.state.selected} 
+              tabIndex="0"
+              > 
+          <ul id="member-dropdown-list">
+            <li className="member-dropdown-list-item">
+              <button className="member-dropdown-list-button"
+                      onBlur={() => this.toggleDropdown()}>
+                Leave this group
+              </button>
+            </li>
+          </ul>
         </div>
-      </div>
-      
+
+      </div>      
     )
+  }
+
+  createMember(){
+    let member = {
+      userid: this.props.current_user_id,
+      groupid: this.props.group.id
+    }
+    this.props.createMemberThunk(member)
   }
 
   render(){    
@@ -53,9 +66,9 @@ class ShowMembershipDropdown extends React.Component{
       )
     } else {      
       return (
-        <div>
+        <button onClick={() => this.createMember()}>
           Join this Group
-        </div>        
+        </button>        
       )
     }
   }
@@ -67,4 +80,10 @@ const msp = (state, ownProps) => {
     current_user_id: state.session.id
   })  
 }
-export default connect(msp)(ShowMembershipDropdown);
+
+const mdp = dispatch => {
+  return({
+    createMemberThunk: member => dispatch(createMemberThunk(member))
+  })
+}
+export default connect(msp, mdp)(ShowMembershipDropdown);
