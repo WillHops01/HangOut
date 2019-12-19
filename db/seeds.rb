@@ -18,7 +18,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 user1 = User.create(username: "Will", email: "email@email.com",password: "hunter2",long:125.15,lat:100.15)
 user2 = User.create(username: "edherman", email: "edherman",password: "hunter2",long:125.15,lat:100.15)
 user3 = User.create(username: "santaclaus", email: "santa@north-pole.com",password: "hunter2",long:125.15,lat:100.15)
-user4 = User.create(username: "santaclaus", email: "santa@north-pole.com",password: "hunter2",long:125.15,lat:100.15)
+#user4 = User.create(username: "santaclaus", email: "santa@north-pole.com",password: "hunter2",long:125.15,lat:100.15)
 demouser = User.create(username: "demouser", email: "DemoUser", password: "hunter2", long:125.15,lat:100.15)
 
 Group.destroy_all
@@ -51,15 +51,15 @@ group7 = user3.created_groups.create(name: "Group 7",
   description: "description lalala",
   long: 125.13, lat: 100.85, image_link: image5)
 
-group5 = user3.created_groups.create(name: "Group 8",
+group8 = user3.created_groups.create(name: "Group 8",
   description: "Hike the trails of New Jersey.",
   long: 125.13, lat: 100.85, image_link: image1)
 
-group6 = user3.created_groups.create(name: "Group 9",
+group9 = user3.created_groups.create(name: "Group 9",
   description: "Come practice Spanish / English ",
   long: 125.13, lat: 100.85, image_link: image3)
 
-group7 = user1.created_groups.create(name: "Group 10",
+group10 = user1.created_groups.create(name: "Group 10",
   description: "description lalalala",
   long: 125.13, lat: 100.85, image_link: hiking_image)
 

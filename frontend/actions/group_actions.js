@@ -42,7 +42,8 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveOneGroup = ({group}) => {    
+export const receiveOneGroup = ({group}) => {   
+  debugger; 
   return({
   type: RECEIVE_ONE_GROUP,
   group

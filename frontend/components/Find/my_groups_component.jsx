@@ -95,6 +95,7 @@ class MyGroupComponent extends React.Component{
 }
 
 const msp = ({entities}) => {  
+  debugger
   return({
     groups: entities.groups
   })
