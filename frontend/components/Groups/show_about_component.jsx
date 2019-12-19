@@ -7,7 +7,8 @@ const GroupShowAbout = ({group}) => {
     let picEles = group.user_details.map((user, idx) => {
       return(
         <img src={user.profile_image_link}
-              key={idx}/>
+              key={idx}
+              className="about-profile-images"/>
       )
     })
     return(
@@ -50,7 +51,7 @@ const GroupShowAbout = ({group}) => {
 
         <div id="about-members-container">
           <div id="about-members-title">
-
+            Members ({group.member_count})
           </div>          
           { buildPictures() }
         </div>
