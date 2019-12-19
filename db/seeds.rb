@@ -18,6 +18,7 @@ ActiveRecord::Base.connection.reset_pk_sequence!('users')
 user1 = User.create(username: "Will", email: "email@email.com",password: "hunter2",long:125.15,lat:100.15)
 user2 = User.create(username: "edherman", email: "edherman",password: "hunter2",long:125.15,lat:100.15)
 user3 = User.create(username: "santaclaus", email: "santa@north-pole.com",password: "hunter2",long:125.15,lat:100.15)
+user4 = User.create(username: "santaclaus", email: "santa@north-pole.com",password: "hunter2",long:125.15,lat:100.15)
 demouser = User.create(username: "demouser", email: "DemoUser", password: "hunter2", long:125.15,lat:100.15)
 
 Group.destroy_all

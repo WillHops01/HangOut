@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { HashRouter, Route } from 'react-router-dom';
 import App from "./components/app";
 import configureStore from "./store/store";
-import { fetchGroups, fetchOneGroup } from "./actions/group_actions";
+import { fetchGroups, fetchOneGroup, createMemberThunk } from "./actions/group_actions";
 
 
 
@@ -43,6 +43,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.dispatch = store.dispatch;
   window.changeDropdownState = changeDropdownState;
   window.fetchOneGroup = fetchOneGroup;
+  window.createMemberThunk = createMemberThunk;
+
+  //let member1 = {userid: 1, groupid:1 }
 
   //END TESTING
   //window.dispatch(fetchGroups());

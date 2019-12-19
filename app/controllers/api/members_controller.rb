@@ -1,11 +1,17 @@
 class Api::MembersController < ApplicationController
 
     def create
-        debugger
-        user = params[:member][:userid]
-        group = params[:member][:groupid]
+        
+        user = User.find(params[:member][:userid])
+        
+        @group = Group.find(params[:member][:groupid])
+        
 
-        @member = Member.new
-
+        @member = Member.new(user: user, group: @group)
+        if @member.save
+            #need to update group and current
+            render :show
+        else
+        end
     end
 end

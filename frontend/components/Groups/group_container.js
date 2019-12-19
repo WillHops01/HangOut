@@ -5,7 +5,8 @@ import { fetchOneGroup } from "../../actions/group_actions";
 
 const msp = (state, ownProps) => {  
   return({
-    group: state.entities.groups[ownProps.match.params.groupId]
+    group: state.entities.groups[ownProps.match.params.groupId],
+    //current_user_groups: state.entities.groups.current_user_groups
   });
 };
 

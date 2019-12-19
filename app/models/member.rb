@@ -10,6 +10,8 @@
 #
 
 class Member < ApplicationRecord
+  validates_uniqueness_of :user_id, :scope => :group_id, :message => "User is already a member of this group"
+
   belongs_to :group
 
   belongs_to :user

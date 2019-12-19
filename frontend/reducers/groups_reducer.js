@@ -14,8 +14,9 @@ const GroupsReducer = (state = {}, action) => {
     case RECEIVE_ONE_GROUP:       
       let nextState = Object.assign({},newState, { [action.group.id]:action.group });     
       return nextState;
-    case RECEIVE_NEW_MEMBER:
-      return state;
+    case RECEIVE_NEW_MEMBER:      
+      newState.current_user_groups = action.membership;
+      return newState;
     default:
       return state;
   }

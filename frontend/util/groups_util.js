@@ -24,7 +24,7 @@ export const createGroup = group => (
 
 export const createMember = (member) => {
   //let member = {userId, groupId}
-  debugger
+  // debugger
   return(
     $.ajax({
       method: "POST",

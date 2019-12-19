@@ -23,17 +23,17 @@ export const fetchOneGroup = (groupId) => dispatch =>{
 //import session action current user, dispatch multiple actions?
 
 export const createMemberThunk = (member) => dispatch => {
-  createMember(member).then(payload => {
-    debugger;
-    dispatch(receiveNewMember(member));
-    dispatch();
+  createMember(member).then(payload => {    
+    dispatch(receiveOneGroup(payload));
+    dispatch(receiveNewMembership(payload.current_user_groups));
   })
 }
 
-export const receiveNewMember = member => {
+export const receiveNewMembership = membership => {
+  debugger
   return({
     type: RECEIVE_NEW_MEMBER,
-    member
+    membership
   })
 }
 
@@ -42,7 +42,7 @@ export const receiveGroups = groups => ({
   groups
 });
 
-export const receiveOneGroup = ({group}) => {  
+export const receiveOneGroup = ({group}) => {    
   return({
   type: RECEIVE_ONE_GROUP,
   group
