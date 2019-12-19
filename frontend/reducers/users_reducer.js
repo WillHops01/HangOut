@@ -8,10 +8,8 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return Object.assign({}, state, { [action.currentUser.id]: action.currentUser });
     case RECEIVE_NEW_MEMBER:      
-      let newState = state;
-      debugger;
-      newState[action.membership.id].current_user_groups = action.membership.current_user_groups;
-      debugger;
+      let newState = state;      
+      newState[action.membership.user_id].current_user_groups = action.membership.current_user_groups;
       return newState;
     default:
       return state;
