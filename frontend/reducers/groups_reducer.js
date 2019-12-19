@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { GET_ALL_GROUPS, RECEIVE_ONE_GROUP } from '../actions/group_actions';
+import { GET_ALL_GROUPS, RECEIVE_ONE_GROUP, RECEIVE_NEW_MEMBER } from '../actions/group_actions';
 
 const GroupsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -14,6 +14,8 @@ const GroupsReducer = (state = {}, action) => {
     case RECEIVE_ONE_GROUP:       
       let nextState = Object.assign({},newState, { [action.group.id]:action.group });     
       return nextState;
+    case RECEIVE_NEW_MEMBER:
+      return state;
     default:
       return state;
   }

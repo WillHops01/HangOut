@@ -1,8 +1,9 @@
-import { getGroups, getOneGroup, createGroup } from "../util/groups_util";
+import { getGroups, getOneGroup, createGroup, createMember } from "../util/groups_util";
 
 
 export const GET_ALL_GROUPS = "GET_ALL_GROUPS";
 export const RECEIVE_ONE_GROUP = "RECEIVE_ONE_GROUP";
+export const RECEIVE_NEW_MEMBER = "RECEIVE_NEW_MEMBER";
 
 
 export const fetchGroups = () => dispatch =>{  
@@ -19,6 +20,23 @@ export const fetchOneGroup = (groupId) => dispatch =>{
   getOneGroup(groupId).then(group => dispatch(receiveOneGroup(group)));
 };
 
+//import session action current user, dispatch multiple actions?
+
+export const createMemberThunk = (member) => dispatch => {
+  createMember(member).then(payload => {
+    debugger;
+    dispatch(receiveNewMember(member));
+    dispatch();
+  })
+}
+
+export const receiveNewMember = member => {
+  return({
+    type: RECEIVE_NEW_MEMBER,
+    member
+  })
+}
+
 export const receiveGroups = groups => ({
   type: GET_ALL_GROUPS,
   groups
@@ -30,4 +48,6 @@ export const receiveOneGroup = ({group}) => {
   group
 });
 };
+
+
 

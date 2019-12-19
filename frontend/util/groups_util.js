@@ -21,3 +21,15 @@ export const createGroup = group => (
     data: { group }
   })
 );
+
+export const createMember = (member) => {
+  //let member = {userId, groupId}
+  debugger
+  return(
+    $.ajax({
+      method: "POST",
+      url: "api/members",
+      data: {member}
+    })
+  )
+}
