@@ -8,7 +8,7 @@ class ShowGroupHead extends React.Component{
   }
 
   componentDidMount(){      
-    if (typeof this.props.group === "undefined"){      
+    if (typeof this.props.group === "undefined" || !this.props.group.hasOwnProperty("user_details")){   
       this.fetchGroup(this.props.match.params.groupId);  
     }      
   }

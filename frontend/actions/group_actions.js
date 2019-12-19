@@ -1,4 +1,4 @@
-import { getGroups, getOneGroup, createGroup, createMember } from "../util/groups_util";
+import { getGroups, getOneGroup, createGroup, createMember, deleteMember } from "../util/groups_util";
 
 
 export const GET_ALL_GROUPS = "GET_ALL_GROUPS";
@@ -29,6 +29,12 @@ export const createMemberThunk = (member) => dispatch => {
   })
 }
 
+export const destroyMemberThunk = (member) => dispatch => {  
+  deleteMember(member).then(payload => {
+    dispatch(receiveOneGroup(payload));
+    dispatch(receiveNewMembership(payload.current_user_groups));
+  })
+}
 
 
 export const receiveNewMembership = membership => {  

@@ -75,21 +75,23 @@ class MyGroupComponent extends React.Component{
     }
   }
 
-  render(){    
+  render(){       
     if (typeof this.props.groups.current_user_groups === "undefined"){ 
       return null;
-    }
-    this.myGroups = this.props.groups.current_user_groups;
-    if (this.myGroups){      
-      return(
-        <div id="my-groups-container">
-          {this.buildMyGroups()}          
-        </div>
-      )
     } else {
-      return null;
-    }    
-  }
+        this.myGroups = this.props.groups.current_user_groups;
+        if (this.myGroups) {
+          return (
+            <div id="my-groups-container">
+              {this.buildMyGroups()}
+            </div>
+          )
+        } else {
+          return null;
+        }
+      }
+    }
+    
 }
 
 const msp = ({entities}) => {    

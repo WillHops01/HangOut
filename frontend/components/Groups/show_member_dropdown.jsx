@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createMemberThunk } from "../../actions/group_actions";
+import { createMemberThunk, destroyMemberThunk } from "../../actions/group_actions";
 
 class ShowMembershipDropdown extends React.Component{
   constructor(props){
@@ -10,7 +10,7 @@ class ShowMembershipDropdown extends React.Component{
     }
     this.renderMember = this.renderMember.bind(this);    
     this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.createMember = this.createMember.bind(this);
+    this.changeMembership = this.changeMembership.bind(this);
   }
 
   toggleDropdown(){   
@@ -25,20 +25,19 @@ class ShowMembershipDropdown extends React.Component{
 
     return(
       <div id="member-dropdown-outer-container">
-        <button id="member-dropdown-button"
-                onClick={()=>this.toggleDropdown()}>
+        <button id="member-dropdown-button"                
+                tabIndex="0"
+                onBlur={() => this.toggleDropdown()}
+                onFocus={() => this.toggleDropdown()}>
           <div className="member-dropdown-inner already-member">
             You're a member
           </div>
         </button>
-
-        <div className={this.state.selected} 
-              tabIndex="0"
-              > 
+        <div className={this.state.selected}> 
           <ul id="member-dropdown-list">
             <li className="member-dropdown-list-item">
               <button className="member-dropdown-list-button"
-                      onBlur={() => this.toggleDropdown()}>
+                      onMouseDown={()=>this.changeMembership("delete")}>
                 Leave this group
               </button>
             </li>
@@ -49,12 +48,16 @@ class ShowMembershipDropdown extends React.Component{
     )
   }
 
-  createMember(){
+  changeMembership(method){
     let member = {
       userid: this.props.current_user_id,
       groupid: this.props.group.id
     }
-    this.props.createMemberThunk(member)
+    if (method==="create"){
+      this.props.createMemberThunk(member)
+    } else {
+      this.props.destroyMemberThunk(member)
+    }    
   }
 
   render(){    
@@ -67,7 +70,7 @@ class ShowMembershipDropdown extends React.Component{
     } else {      
       return (
         <button id="member-dropdown-button"
-          onClick={() => this.createMember()}>
+          onClick={() => this.changeMembership("create")}>
           <div className="member-dropdown-inner join-group">
             Join this group
           </div>
@@ -86,7 +89,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return({
-    createMemberThunk: member => dispatch(createMemberThunk(member))
+    createMemberThunk: member => dispatch(createMemberThunk(member)),
+    destroyMemberThunk: member => dispatch(destroyMemberThunk(member)),
   })
 }
 export default connect(msp, mdp)(ShowMembershipDropdown);

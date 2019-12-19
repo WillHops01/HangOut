@@ -12,12 +12,11 @@ class Api::MembersController < ApplicationController
         end
     end
 
-    def destroy
-        debugger
-        @user = current_user
-        # @group = Group.find(params[:member][:groupid])  
-        @member = @user.memberships.find_by(group_id: params[:id])
-        debugger
+    def destroy        
+        @user = current_user      
+        @group = Group.find(params[:member][:groupid])   
+        @member = @user.memberships.find_by(group_id: @group.id)
+        @member.destroy        
         render :show
     end
 end

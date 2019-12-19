@@ -2,15 +2,16 @@
 #
 # Table name: users
 #
-#  id              :bigint           not null, primary key
-#  username        :string           not null
-#  email           :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  long            :float            not null
-#  lat             :float            not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :bigint           not null, primary key
+#  username           :string           not null
+#  email              :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  long               :float            not null
+#  lat                :float            not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  profile_image_link :string
 #
 
 class User < ApplicationRecord
@@ -18,7 +19,7 @@ class User < ApplicationRecord
   validates :password_digest, :long, :lat, presence: true
   validates :password, length: {minimum: 6}, allow_nil: true
   attr_reader :password
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :set_defaults
 
   has_many :created_groups,
     class_name: :Group,
@@ -33,6 +34,10 @@ class User < ApplicationRecord
   has_many :groups,
     through: :memberships,
     source: :group
+
+  def set_defaults
+    self.profile_image_link ||= "/Icons/profile_background.png"
+  end
 
   def ensure_session_token
     self.session_token ||= self.reset_session_token!
