@@ -35,7 +35,9 @@ class Banner extends React.Component {
     loggedInHeader(){           
         return(
             <div id="user-nav-icon-container">
-                <button onClick={this.changeDropdownState}>
+                <button tabIndex="0"
+                        onBlur={() => this.changeDropdownState()}
+                        onFocus={() => this.changeDropdownState()}>
                     <img src="/letter_image.png"/>
                 </button>
                 <nav id={this.state.status}>
@@ -63,7 +65,7 @@ class Banner extends React.Component {
                             Testing Button
                         </button>
                         <button className="dropdown-nav-Items"
-                            onClick={this.clicktoClose}>
+                            onMouseDown={this.clicktoClose}>
                                 Log Out
                         </button>
                     </div>

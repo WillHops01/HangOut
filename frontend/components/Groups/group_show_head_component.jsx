@@ -55,7 +55,7 @@ class ShowGroupHead extends React.Component{
                   <div className="group-show-icon-text">
                     Organized by{" "}
                     <h3 id="group-show-details-creator">
-                      {group.creator_name}
+                      {group.creator.username}
                     </h3>
                   </div>
                 </div>                  

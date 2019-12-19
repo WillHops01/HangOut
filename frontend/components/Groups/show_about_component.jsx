@@ -3,6 +3,20 @@ import React from "react";
 
 const GroupShowAbout = ({group}) => {  
 
+  const buildPictures = () => {
+    let picEles = group.user_details.map((user, idx) => {
+      return(
+        <img src={user.profile_image_link}
+              key={idx}/>
+      )
+    })
+    return(
+      <div id="about-members-picture-container">
+        { picEles }
+      </div>
+    )
+  }
+  // debugger;
   return(
     <div id="group-show-about-main">
 
@@ -25,7 +39,22 @@ const GroupShowAbout = ({group}) => {
           <span className="about-title">
             Organizer
           </span>
+          <div id="about-creator-details-container">
+            <img src={group.creator.profile_image_link}
+                className="about-profile-images"/>
+            <div id="about-creator-name">
+              {group.creator.username}
+            </div>
+          </div>
         </div>
+
+        <div id="about-members-container">
+          <div id="about-members-title">
+
+          </div>          
+          { buildPictures() }
+        </div>
+
       </section>
     </div>
   )
