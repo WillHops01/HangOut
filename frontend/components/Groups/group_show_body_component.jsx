@@ -22,8 +22,6 @@ class GroupShowBody extends React.Component{
     if (this.state[buttonTitle] === "selected"){
       return;
     }
-
-    //else
     let newState = {};
     Object.keys(this.state).forEach(key => {      
       if(key === buttonTitle){
