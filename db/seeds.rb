@@ -12,6 +12,12 @@ image3 = "/GroupImages/hipsters.jpg"
 hiking_image = "/GroupImages/hikinggroup1.jpg"
 image4 = "/GroupImages/group4.jpg"
 image5 = "/GroupImages/group5.png"
+pizzalover = "GroupImages/pizzalovers.jpeg"
+seconvo = "GroupImages/spanish-2-picture.jpg"
+videogames = "GroupImages/beervideo.jpg"
+salsa = "GroupImages/salsa.jpeg"
+books = "GroupImages/bookclub.jpg"
+
 
 User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
@@ -32,35 +38,35 @@ group2 = user2.created_groups.create(name: "Jokes R Us",
   long: 125.13, lat: 100.85, image_link: image2)
 
 group3 = user2.created_groups.create(name: "Hipsters Anonymous",
-  description: "Help us make up unnecessarily shorter versions of words",
+  description: "Help us make up unnecessarily shorter versions of words. Also, we give fashion advice.",
   long: 125.13, lat: 100.85, image_link: image3)
 
-group4 = user1.created_groups.create(name: "Group 4",
-  description: "discuss your coding woes, strategies, and jokes. Up your coding game.",
-  long: 125.13, lat: 100.85, image_link: image1)
+group4 = user1.created_groups.create(name: "Pizza Lovers",
+  description: "We travel the countryside sampling all types of pizza. If you like pizza, and you like having friends, then Pizza Lovers is the group for you!",
+  long: 125.13, lat: 100.85, image_link: pizzalover)
 
 group5 = user2.created_groups.create(name: "Hike NJ",
-  description: "Hike the scenic trails of New Jersey.",
+  description: "Hike the scenic trails of New Jersey. Explore Northern/Central New Jersey with hikes for all skill-levels.",
   long: 125.13, lat: 100.85, image_link: hiking_image)
 
 group6 = user2.created_groups.create(name: "Spanish / English Conversation Club",
-  description: "Come practice your Spanish / English ",
-  long: 125.13, lat: 100.85, image_link: image4)
+  description: "Come practice your Spanish / English. Venga y practica con nosotros. Somos un grupo diverso con gente de todos lados. Learn Spanish, earn English, drink good coffee.",
+  long: 125.13, lat: 100.85, image_link: seconvo)
 
-group7 = user3.created_groups.create(name: "Group 7",
-  description: "description lalala",
-  long: 125.13, lat: 100.85, image_link: image5)
+group7 = user3.created_groups.create(name: "Video Games n Beer",
+  description: "We set up Playstation and Xbox in various bars around the city, drink, play video games, and have a good time. Compete for weekly prizes, or just come and enjoy yourself, all are welcome.",
+  long: 125.13, lat: 100.85, image_link: videogames)
 
-group8 = user3.created_groups.create(name: "Group 8",
-  description: "Hike the trails of New Jersey.",
-  long: 125.13, lat: 100.85, image_link: image1)
+group8 = user3.created_groups.create(name: "Dance Sala",
+  description: "Whether you are a beginner, intermediate, or advanced salsa dancer, our group has something for you. Come dance to your favorite latin rhythms and shake your dancing legs.",
+  long: 125.13, lat: 100.85, image_link: salsa)
 
-group9 = user3.created_groups.create(name: "Group 9",
-  description: "Come practice Spanish / English ",
-  long: 125.13, lat: 100.85, image_link: image3)
+group9 = user3.created_groups.create(name: "Queens Book Club",
+  description: "Come add to our reading repertoire and discuss",
+  long: 125.13, lat: 100.85, image_link: books)
 
-group10 = user1.created_groups.create(name: "Group 10",
-  description: "description lalalala",
+group10 = user1.created_groups.create(name: "Waterfall Jumpers",
+  description: "We find the best waterfalls, then jump! ",
   long: 125.13, lat: 100.85, image_link: hiking_image)
 
 Member.destroy_all
