@@ -37,7 +37,7 @@ class GroupShowAbout extends React.Component{
                 What we're about
           </span>
               <span id="groupshow-description">
-                {group.description} plus other really long strings string string
+                {group.description}
           </span>
             </div>
           </section>
