@@ -91,7 +91,7 @@ class Banner extends React.Component {
                             Testing Button
                         </button> */}
                         <button className="dropdown-nav-Items"
-                            onMouseDown={this.clicktoClose}>
+                            onMouseDown={() => this.clicktoClose()}>
                                 Log Out
                         </button>
                     </div>
