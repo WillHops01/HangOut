@@ -1,24 +1,26 @@
-# README
+<h1 align="center">Hang Out App</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+<h2 align="center">The World Is Calling</h3>
+<h4 align="center">Join a group to hangout with new friends..</h4>
+<h4 align="center">..learn something new..</h4>
+<h4 align="center">..or do something you love to do!</h4>
 
-* Ruby version
+[Find a group or activity near you today](https://hangout-group-app.herokuapp.com/)
 
-* System dependencies
+## What is Hang Out?
+#### Hang out is an app designed to allow people to connect, meet up, and hang out!  
+Users can:
+* find local groups
+* join groups they are interested in
 
-* Configuration
+## Technologies Used
 
-* Database creation
+## Notable Features
 
-* Database initialization
+## Next Steps
+#### Coming soon:
+* group events, 
+* user calendar, 
+* event RSVPS
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
