@@ -15,9 +15,10 @@ Users can:
 * join groups they are interested in
 
 ## Technologies Used
-**Ruby on Rails** -
-**React** -
-**Redux** -
+**Ruby on Rails** -  
+**React** -  
+**Redux** -  
+
 
 
 ## Notable Features
@@ -81,7 +82,7 @@ changeSelect(buttonTitle){
     this.setState(newState);    
   }
 ```
-Rather than setting the state of each element on each iteration, instead we create a new object, set the key-value pairs of the object to our new state, then call our setState once passing it this new object, triggering only a single re-render.
+Rather than this.setState for each element on each iteration, instead we create a new object, set the key-value pairs of the object to our new state, then call our setState once only, passing it this new object and triggering only a single re-render.
 
 
 ## Next Steps
@@ -89,4 +90,6 @@ Rather than setting the state of each element on each iteration, instead we crea
 * group events, 
 * user calendar, 
 * event RSVPS
+* search
+* Google location API
 

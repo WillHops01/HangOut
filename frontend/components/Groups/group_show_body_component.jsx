@@ -68,7 +68,7 @@ class GroupShowBody extends React.Component{
     )
   }
 
-  renderBody(){
+  renderBody(){    
     if(this.state.about === "selected"){            
       return ( <Route component={ShowAbout}/> )
     } else {
