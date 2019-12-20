@@ -1,8 +1,7 @@
 import React from "react";
-//import { connect } from "react-redux";
+import { connect } from "react-redux";
 
-const GroupShowAbout = ({group}) => {  
-
+const GroupShowAbout = ({group}) => {    
   const buildPictures = () => {    
     let picEles = group.user_details.map((user, idx) => {
       return(
@@ -66,10 +65,11 @@ const GroupShowAbout = ({group}) => {
   
 };
 
-export default GroupShowAbout;
+const msp = ({ entities }, ownProps) => {  
+  return ({
+    group: entities.groups[ownProps.match.params.groupId],
+    users: entities.users
+  })
+}
 
-
-
-// const msp = state => ({
-//   group: 
-// })
+export default connect(msp)(GroupShowAbout);

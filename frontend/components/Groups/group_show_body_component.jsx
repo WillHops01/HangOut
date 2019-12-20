@@ -2,6 +2,7 @@ import React from "react";
 import ShowAbout from "./show_about_component";
 import ShowMemberDropdown from "./show_member_dropdown";
 import { Route } from "react-router-dom";
+import { connect } from "react-redux"; 
 
 class GroupShowBody extends React.Component{
   constructor(props){
@@ -70,8 +71,8 @@ class GroupShowBody extends React.Component{
   }
 
   renderBody(){
-    if(this.state.about === "selected"){      
-      return ( <ShowAbout group={this.props.group}/> )
+    if(this.state.about === "selected"){            
+      return ( <Route component={ShowAbout}/> )
     } else {
       return null;
     }
@@ -89,4 +90,11 @@ class GroupShowBody extends React.Component{
   }
 }
 
-export default GroupShowBody;
+const msp = ({ entities }, ownProps) => {
+  return ({
+    group: entities.groups[ownProps.match.params.groupId],
+    users: entities.users
+  })
+}
+
+export default connect(msp)(GroupShowBody);

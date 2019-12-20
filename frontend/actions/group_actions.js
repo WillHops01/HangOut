@@ -23,7 +23,7 @@ export const fetchOneGroup = (groupId) => dispatch =>{
 export const createMemberThunk = (member) => dispatch => {
   createMember(member).then(payload => {    
     dispatch(receiveOneGroup(payload));
-    dispatch(receiveNewMembership(payload.current_user_groups));
+    dispatch(receiveNewMembership(payload.user));
   })
 }
 

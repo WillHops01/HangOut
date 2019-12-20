@@ -1,5 +1,6 @@
 import React from "react";
 import GroupShowBody from "./group_show_body_component";
+import { Route } from "react-router-dom";
 
 class ShowGroupHead extends React.Component{
   constructor(props){
@@ -68,7 +69,8 @@ class ShowGroupHead extends React.Component{
           
 
           {/* START MAIN PAGE */}
-          <GroupShowBody group={this.props.group}/>
+          <Route component={GroupShowBody}/>
+          {/* <GroupShowBody group={this.props.group}/> */}
         </div>
       )
     }     
