@@ -146,6 +146,21 @@
             height: 40px;
         }
 
+        @keyframes blinking {
+            0% {
+                background-color: rgb(59,89,152); 
+                box-shadow: 10px 5px 0px red;
+            }
+            50% {
+                background-color: rgb(137, 154, 192); 
+                box-shadow: 10px 5px 5px red;
+            }
+            100%{
+                background-color: rgb(235, 134, 210);
+                box-shadow: 10px 5px 10px red;
+            }
+        }
+
         #demo-user-button{
             border: 1px solid darkblue;
             border-left: 2px solid white;
@@ -156,8 +171,8 @@
             font-weight: 600;
             min-height: 36px;  
             background-color: rgb(59,89,152);  
-            border-radius: 3px;   
-            // padding: 15px 15px 15px 15px;  
+            border-radius: 3px;  
+            animation: blinking 1300ms infinite;
             // margin-top: 12px;
             #demo-user-span{
                 color: white;

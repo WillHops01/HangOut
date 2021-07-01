@@ -24,7 +24,6 @@ class GroupShowAbout extends React.Component{
 
   render(){
     let group = this.props.group
-    debugger;
     if (group.hasOwnProperty("user_details")) {
       return (
         <div id="group-show-about-main">

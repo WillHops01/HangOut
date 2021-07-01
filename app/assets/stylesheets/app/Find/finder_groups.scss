@@ -32,6 +32,8 @@
 
     &:hover{
       cursor: pointer;
+      border: 2px solid red;
+      border-radius: 4px;
     }
 
     .mygroup-element-title{

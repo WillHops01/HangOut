@@ -11,8 +11,6 @@ import FindContainer from "./Find/find_container";
 
 import GroupContainer from "./Groups/group_container";
 
-//import TestComponent from "./test_component";
-
 
 const App = () => {
     
