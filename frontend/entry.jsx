@@ -45,11 +45,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.fetchOneGroup = fetchOneGroup;
   window.createMemberThunk = createMemberThunk;
 
-  //let member1 = {userid: 1, groupid:1 }
 
   //END TESTING
-  //window.dispatch(fetchGroups());
-  //debugger
+ 
   ReactDOM.render(<Root store={store} />, root);
 })
 
